@@ -1,6 +1,16 @@
 # Mississippi WMA Draw Hunt Analysis Project
 
-This project helps analyze and track Mississippi Wildlife Management Area (WMA) draw hunt opportunities to make informed decisions about which hunts to apply for. **Enhanced with moon phase and deer rut timing analysis for Yazoo County, Mississippi region.**
+A comprehensive analysis tool for Mississippi Wildlife Management Area (WMA) draw hunt opportunities, featuring a modern web application and data-driven recommendations. **Enhanced with moon phase and deer rut timing analysis for Yazoo County, Mississippi region.**
+
+## 🌐 Live Web Application
+
+**Access the interactive web app:** [https://steviesimii.github.io/WMA_Hunt_Analysis/](https://steviesimii.github.io/WMA_Hunt_Analysis/)
+
+Features a modern, responsive design with:
+- Interactive strategy dashboard
+- Calendar visualizations with moon phases
+- Top hunt rankings by category
+- Mobile-optimized interface
 
 ## Project Overview
 
