@@ -4,7 +4,7 @@ A comprehensive analysis tool for Mississippi Wildlife Management Area (WMA) dra
 
 ## 🌐 Live Web Application
 
-**Access the interactive web app:** [https://steviesimii.github.io/WMA_Hunt_Analysis/](https://steviesimii.github.io/WMA_Hunt_Analysis/)
+**Access the interactive web app:** [https://steviesimsii.github.io/WMA_Hunt_Analysis/](https://steviesimsii.github.io/WMA_Hunt_Analysis/)
 
 Features a modern, responsive design with:
 - Interactive strategy dashboard
