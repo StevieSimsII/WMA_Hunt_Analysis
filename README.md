@@ -75,7 +75,7 @@ The Mississippi Department of Wildlife, Fisheries & Parks offers draw hunts on v
 **PEAK RUT CHAMPION:**
 - **Charles Ray Nix PW Hunt 6** - Dec 29-Jan 4, 2026 (Score: 4.48) 🦌
 
-*Analysis includes 203 hunt opportunities across Archery, Gun, Primitive Weapon, and Group hunts. Primitive Weapon hunts offer the best combination of timing, duration, and success probability for Yazoo County rut patterns.*
+*Analysis includes 131 hunt opportunities across Archery, Gun, Primitive Weapon, and Group hunts. Primitive Weapon hunts offer the best combination of timing, duration, and success probability for Yazoo County rut patterns.*
 
 ## Resources
 

@@ -21,7 +21,7 @@ A modern, responsive web application for analyzing Mississippi Wildlife Manageme
 - **Fast Loading** - Lightweight, optimized code
 
 ### Data-Driven Insights
-- **203 Hunt Opportunities** analyzed across all weapon types
+- **131 Hunt Opportunities** analyzed across all weapon types
 - **Moon Phase Integration** - Optimal timing for deer movement
 - **Rut Period Analysis** - Peak breeding activity (Dec 29 - Jan 4)
 - **Strategic Diversification** - Risk management and success optimization
