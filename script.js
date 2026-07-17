@@ -1,423 +1,229 @@
-// Navigation functionality
-document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // Update active nav link
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
-            }
-        });
-    });
+const DATA_URL = "decision_2026_27.json";
 
-    // Update active nav link on scroll
-    window.addEventListener('scroll', function() {
-        const sections = document.querySelectorAll('section[id]');
-        const scrollPosition = window.scrollY + 100;
+const categoryLabel = {
+  archery: "Archery",
+  gun: "Gun",
+  primitive_weapon: "Primitive",
+  group: "Group",
+  youth: "Youth",
+  senior: "Senior",
+};
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-        });
-    });
+let DATA = null;
 
-    // Mobile menu toggle
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const navLinksContainer = document.querySelector('.nav-links');
-    
-    if (mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function() {
-            navLinksContainer.classList.toggle('active');
-        });
-    }
-
-    // Initialize ranking tabs
-    initializeRankingTabs();
-    
-    // Initialize calendar views
-    initializeCalendarViews();
-    
-    // Add scroll animations
-    addScrollAnimations();
-});
-
-// Utility function for smooth scrolling to sections
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
+function competitionClass(label) {
+  if (!label) return "unknown";
+  const lower = label.toLowerCase();
+  if (lower.includes("unknown")) return "unknown";
+  if (lower.includes("very high") || lower.includes("extreme") || lower === "high") return "hot";
+  if (lower.includes("low") || lower.includes("very low")) return "cool";
+  return "";
 }
 
-// Rankings tab functionality
-function initializeRankingTabs() {
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const rankingCategories = document.querySelectorAll('.ranking-category');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const category = this.getAttribute('onclick').match(/'([^']+)'/)[1];
-            showRankingCategory(category);
-        });
-    });
+function formatScore(score) {
+  return Number(score).toFixed(2);
 }
 
-function showRankingCategory(category) {
-    // Hide all categories
-    const categories = document.querySelectorAll('.ranking-category');
-    categories.forEach(cat => cat.classList.remove('active'));
-    
-    // Show selected category
-    const targetCategory = document.getElementById(`${category}-rankings`);
-    if (targetCategory) {
-        targetCategory.classList.add('active');
-    }
-    
-    // Update active tab
-    const tabs = document.querySelectorAll('.tab-btn');
-    tabs.forEach(tab => tab.classList.remove('active'));
-    
-    // Find and activate the correct tab
-    tabs.forEach(tab => {
-        const tabText = tab.textContent.toLowerCase();
-        if ((category === 'gun' && tabText.includes('gun')) ||
-            (category === 'archery' && tabText.includes('archery')) ||
-            (category === 'primitive' && tabText.includes('primitive')) ||
-            (category === 'group' && tabText.includes('group'))) {
-            tab.classList.add('active');
-        }
-    });
+function competitionTag(hunt) {
+  const cls = competitionClass(hunt.competition_label);
+  return `<span class="tag ${cls}">${hunt.competition_label}</span>`;
 }
 
-// Calendar view functionality
-function initializeCalendarViews() {
-    const calendarButtons = document.querySelectorAll('.calendar-btn');
-    const calendarViews = document.querySelectorAll('.calendar-view');
-
-    calendarButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const view = this.getAttribute('onclick').match(/'([^']+)'/)[1];
-            showCalendarView(view);
-        });
-    });
+async function loadData() {
+  const response = await fetch(DATA_URL);
+  if (!response.ok) {
+    throw new Error(`Failed to load ${DATA_URL}`);
+  }
+  return response.json();
 }
 
-function showCalendarView(view) {
-    // Hide all views
-    const views = document.querySelectorAll('.calendar-view');
-    views.forEach(v => v.classList.remove('active'));
-    
-    // Show selected view
-    const targetView = document.getElementById(`${view}-view`);
-    if (targetView) {
-        targetView.classList.add('active');
-    }
-    
-    // Update active button
-    const buttons = document.querySelectorAll('.calendar-btn');
-    buttons.forEach(btn => btn.classList.remove('active'));
-    
-    // Find and activate the correct button
-    buttons.forEach(btn => {
-        const btnText = btn.textContent.toLowerCase();
-        if ((view === 'timeline' && btnText.includes('timeline')) ||
-            (view === 'monthly' && btnText.includes('monthly')) ||
-            (view === 'moon' && btnText.includes('moon'))) {
-            btn.classList.add('active');
-        }
-    });
+function renderHero(data) {
+  document.getElementById("statHunts").textContent = data.totals.hunts.toLocaleString();
+  document.getElementById("statLocations").textContent = data.totals.locations.toLocaleString();
+  document.getElementById("statPeak").textContent = data.peak_rut.hunt_count.toLocaleString();
+  document.getElementById("deadlineLine").textContent =
+    `Application window: July 15 – August 15, 2026 · ${data.totals.permits.toLocaleString()} permit seats in inventory`;
 }
 
-// Scroll animations
-function addScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe cards and items for animation
-    const animatedElements = document.querySelectorAll('.strategy-card, .ranking-item, .about-card, .analysis-card');
-    animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(element);
-    });
+function renderStrategy(data) {
+  const list = document.getElementById("strategyList");
+  const ranked = [...data.strategy].sort((a, b) => b.decision_score - a.decision_score);
+  list.innerHTML = ranked
+    .map((hunt, index) => {
+      const odds =
+        hunt.apps_per_permit_2025 != null
+          ? `${hunt.apps_per_permit_2025} apps/permit (2025)`
+          : "No 2025 history";
+      return `
+        <li class="slate-item" style="animation-delay:${index * 80}ms">
+          <div class="rank">${String(index + 1).padStart(2, "0")}</div>
+          <div class="slate-body">
+            <span class="tag">${categoryLabel[hunt.category] || hunt.category}</span>
+            <h3>${hunt.hunt_name}</h3>
+            <div class="slate-meta">
+              <span>${hunt.date_label}</span>
+              <span>${hunt.permits_available} permits · ${hunt.duration_days} days</span>
+              <span>${hunt.rut_label}</span>
+              ${competitionTag(hunt)}
+              <span>${odds}</span>
+            </div>
+          </div>
+          <div class="score-pill" title="Decision score">${formatScore(hunt.decision_score)}</div>
+        </li>
+      `;
+    })
+    .join("");
 }
 
-// Hunt block hover effects for timeline
-document.addEventListener('DOMContentLoaded', function() {
-    const huntBlocks = document.querySelectorAll('.hunt-block');
-    huntBlocks.forEach(block => {
-        block.addEventListener('mouseenter', function() {
-            const huntInfo = this.querySelector('.hunt-info');
-            if (huntInfo) {
-                huntInfo.style.transform = 'scale(1.05)';
-            }
-        });
-        
-        block.addEventListener('mouseleave', function() {
-            const huntInfo = this.querySelector('.hunt-info');
-            if (huntInfo) {
-                huntInfo.style.transform = 'scale(1)';
-            }
-        });
-    });
-});
+function renderPeak(data) {
+  const root = document.getElementById("peakList");
+  root.innerHTML = data.peak_rut.top
+    .map(
+      (hunt) => `
+      <article class="peak-card">
+        <span class="tag">${categoryLabel[hunt.category] || hunt.category}</span>
+        <h3>${hunt.hunt_name}</h3>
+        <p>${hunt.date_label} · ${hunt.permits_available} permits · score ${formatScore(hunt.decision_score)}</p>
+        <p>${competitionTag(hunt)} ${hunt.moon_label}</p>
+      </article>
+    `
+    )
+    .join("");
+}
 
-// Moon phase tooltip functionality
-function showMoonPhaseInfo(phase, date) {
-    // Create tooltip element
-    const tooltip = document.createElement('div');
-    tooltip.className = 'moon-tooltip';
-    tooltip.innerHTML = `
-        <div class="tooltip-content">
-            <h4>${phase}</h4>
-            <p>${date}</p>
-            <small>Optimal deer movement conditions</small>
+function renderOdds(data) {
+  const withOdds = data.hunts.filter((h) => h.apps_per_permit_2025 != null);
+  const sleepers = [...withOdds]
+    .filter((h) => ["archery", "gun", "primitive_weapon", "group"].includes(h.category))
+    .sort((a, b) => a.apps_per_permit_2025 - b.apps_per_permit_2025)
+    .slice(0, 8);
+  const hottest = [...withOdds]
+    .filter((h) => ["archery", "gun", "primitive_weapon", "group"].includes(h.category))
+    .sort((a, b) => b.apps_per_permit_2025 - a.apps_per_permit_2025)
+    .slice(0, 8);
+
+  document.getElementById("sleeperList").innerHTML = sleepers
+    .map(
+      (h) => `
+      <li>
+        <span>${h.hunt_name}<br /><small>${h.date_label}</small></span>
+        <strong>${h.apps_per_permit_2025}</strong>
+      </li>
+    `
+    )
+    .join("");
+
+  document.getElementById("hotList").innerHTML = hottest
+    .map(
+      (h) => `
+      <li>
+        <span>${h.hunt_name}<br /><small>${h.date_label}</small></span>
+        <strong>${h.apps_per_permit_2025}</strong>
+      </li>
+    `
+    )
+    .join("");
+}
+
+function filteredHunts() {
+  const query = document.getElementById("filterQuery").value.trim().toLowerCase();
+  const category = document.getElementById("filterCategory").value;
+  const rut = document.getElementById("filterRut").value;
+  const sort = document.getElementById("filterSort").value;
+
+  let rows = [...DATA.hunts];
+  if (category !== "all") rows = rows.filter((h) => h.category === category);
+  if (rut !== "all") rows = rows.filter((h) => h.rut_period === rut);
+  if (query) {
+    rows = rows.filter((h) =>
+      `${h.hunt_name} ${h.wma_location} ${h.hunt_type}`.toLowerCase().includes(query)
+    );
+  }
+
+  if (sort === "decision") {
+    rows.sort((a, b) => b.decision_score - a.decision_score);
+  } else if (sort === "odds") {
+    rows.sort((a, b) => {
+      const av = a.apps_per_permit_2025 ?? Number.POSITIVE_INFINITY;
+      const bv = b.apps_per_permit_2025 ?? Number.POSITIVE_INFINITY;
+      return av - bv;
+    });
+  } else if (sort === "date") {
+    rows.sort((a, b) => a.start_date.localeCompare(b.start_date));
+  } else if (sort === "permits") {
+    rows.sort((a, b) => b.permits_available - a.permits_available);
+  }
+
+  return rows;
+}
+
+function renderExplore() {
+  const rows = filteredHunts();
+  document.getElementById("resultMeta").textContent = `${rows.length} hunts shown`;
+  const list = document.getElementById("huntList");
+  const visible = rows.slice(0, 60);
+  list.innerHTML = visible
+    .map(
+      (hunt) => `
+      <article class="hunt-row">
+        <div>
+          <span class="tag">${categoryLabel[hunt.category] || hunt.category}</span>
+          <h3>${hunt.hunt_name}</h3>
+          <p>${hunt.wma_location}</p>
         </div>
-    `;
-    
-    // Add tooltip styles
-    tooltip.style.cssText = `
-        position: fixed;
-        background: var(--bg-dark);
-        color: var(--text-white);
-        padding: var(--space-md);
-        border-radius: var(--radius-md);
-        box-shadow: var(--shadow-lg);
-        z-index: 1000;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    `;
-    
-    document.body.appendChild(tooltip);
-    
-    // Position and show tooltip
-    setTimeout(() => {
-        tooltip.style.opacity = '1';
-    }, 10);
-    
-    // Remove tooltip after delay
-    setTimeout(() => {
-        tooltip.style.opacity = '0';
-        setTimeout(() => {
-            if (tooltip.parentNode) {
-                tooltip.parentNode.removeChild(tooltip);
-            }
-        }, 300);
-    }, 3000);
+        <div>
+          <p>${hunt.date_label}</p>
+          <p>${hunt.permits_available} permits · ${hunt.rut_label}</p>
+          <p>${competitionTag(hunt)}</p>
+        </div>
+        <div class="score-pill">${formatScore(hunt.decision_score)}</div>
+      </article>
+    `
+    )
+    .join("");
+
+  if (rows.length > 60) {
+    list.insertAdjacentHTML(
+      "beforeend",
+      `<p class="result-meta">Showing first 60 of ${rows.length}. Narrow filters to refine.</p>`
+    );
+  }
 }
 
-// Add click events for interactive elements
-document.addEventListener('DOMContentLoaded', function() {
-    // Strategy card click effects
-    const strategyCards = document.querySelectorAll('.strategy-card');
-    strategyCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Add click animation
-            this.style.transform = 'scale(0.98)';
-            setTimeout(() => {
-                this.style.transform = '';
-            }, 150);
-        });
-    });
-
-    // Ranking item click effects
-    const rankingItems = document.querySelectorAll('.ranking-item');
-    rankingItems.forEach(item => {
-        item.addEventListener('click', function() {
-            // Highlight selected item
-            rankingItems.forEach(i => i.classList.remove('selected'));
-            this.classList.add('selected');
-        });
-    });
-});
-
-// Search functionality (future enhancement)
-function searchHunts(query) {
-    const searchResults = [];
-    const allHunts = document.querySelectorAll('.strategy-card, .ranking-item');
-    
-    allHunts.forEach(hunt => {
-        const text = hunt.textContent.toLowerCase();
-        if (text.includes(query.toLowerCase())) {
-            searchResults.push(hunt);
-        }
-    });
-    
-    return searchResults;
+function setupNav() {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".nav");
+  toggle?.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => nav.classList.remove("open"));
+  });
 }
 
-// Export functionality for sharing
-function exportStrategy() {
-    const strategyData = {
-        timestamp: new Date().toISOString(),
-        strategy: 'Optimal 5-Hunt Application Strategy',
-        hunts: [
-            {
-                rank: 1,
-                type: 'Group Gun Hunt',
-                location: 'Phil Bryant (Backwoods Unit)',
-                dates: 'November 19-23, 2025',
-                score: '3.26/5.0'
-            },
-            {
-                rank: 2,
-                type: 'Peak Rut Archery',
-                location: 'Phil Bryant (Goose Lake Unit)',
-                dates: 'January 1-4, 2026',
-                score: '3.82/5.0'
-            },
-            {
-                rank: 3,
-                type: 'Optimal Conditions Archery',
-                location: 'Phil Bryant (Goose Lake Unit)',
-                dates: 'December 18-21, 2025',
-                score: '4.04/5.0'
-            },
-            {
-                rank: 4,
-                type: 'Primitive Weapon',
-                location: 'Mahannah WMA',
-                dates: 'November 20-21, 2025',
-                score: '3.1/5.0'
-            },
-            {
-                rank: 5,
-                type: 'Gun Hunt Backup',
-                location: 'Mahannah WMA',
-                dates: 'December 21-22, 2025',
-                score: '3.4/5.0'
-            }
-        ]
-    };
-    
-    const dataStr = JSON.stringify(strategyData, null, 2);
-    const dataBlob = new Blob([dataStr], {type: 'application/json'});
-    const url = URL.createObjectURL(dataBlob);
-    
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = 'wma-hunt-strategy.json';
-    link.click();
-    
-    URL.revokeObjectURL(url);
+function setupFilters() {
+  ["filterQuery", "filterCategory", "filterRut", "filterSort"].forEach((id) => {
+    document.getElementById(id).addEventListener("input", renderExplore);
+    document.getElementById(id).addEventListener("change", renderExplore);
+  });
 }
 
-// Print functionality
-function printStrategy() {
-    const printWindow = window.open('', '_blank');
-    const strategySection = document.getElementById('strategy');
-    
-    printWindow.document.write(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>WMA Hunt Strategy - Print</title>
-            <style>
-                body { font-family: Arial, sans-serif; margin: 20px; }
-                .strategy-card { margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; }
-                .card-title { font-weight: bold; color: #2c3e50; }
-                .card-details { margin: 10px 0; }
-                .detail-item { margin: 5px 0; }
-            </style>
-        </head>
-        <body>
-            <h1>Mississippi WMA Hunt Analysis - Optimal Strategy</h1>
-            ${strategySection.innerHTML}
-        </body>
-        </html>
-    `);
-    
-    printWindow.document.close();
-    printWindow.print();
+async function init() {
+  setupNav();
+  try {
+    DATA = await loadData();
+    renderHero(DATA);
+    renderStrategy(DATA);
+    renderPeak(DATA);
+    renderOdds(DATA);
+    setupFilters();
+    renderExplore();
+  } catch (error) {
+    console.error(error);
+    document.getElementById("strategyList").innerHTML =
+      `<li class="slate-item"><div class="slate-body"><h3>Could not load decision data.</h3><p>Check that decision_2026_27.json is available.</p></div></li>`;
+  }
 }
 
-// Theme toggle (future enhancement)
-function toggleTheme() {
-    const body = document.body;
-    const currentTheme = body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-}
-
-// Load saved theme
-document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', savedTheme);
-});
-
-// Keyboard navigation
-document.addEventListener('keydown', function(e) {
-    // Arrow key navigation for tabs
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
-        const activeTab = document.querySelector('.tab-btn.active, .calendar-btn.active');
-        if (activeTab) {
-            const tabs = Array.from(activeTab.parentNode.children);
-            const currentIndex = tabs.indexOf(activeTab);
-            let newIndex;
-            
-            if (e.key === 'ArrowLeft') {
-                newIndex = currentIndex > 0 ? currentIndex - 1 : tabs.length - 1;
-            } else {
-                newIndex = currentIndex < tabs.length - 1 ? currentIndex + 1 : 0;
-            }
-            
-            tabs[newIndex].click();
-        }
-    }
-});
-
-// Performance optimization - lazy loading for images (if added)
-function lazyLoadImages() {
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.classList.remove('lazy');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-}
+document.addEventListener("DOMContentLoaded", init);
