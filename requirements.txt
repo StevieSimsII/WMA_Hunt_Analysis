@@ -4,18 +4,12 @@
 pandas>=1.5.0
 numpy>=1.21.0
 
+# PDF schedule / stats ingestion
+pypdf>=4.0.0
+
 # Visualization
 plotly>=5.0.0
 streamlit>=1.25.0
-
-# Date/time handling
-datetime
-
-# Data export
-csv
-
-# Calendar functionality
-calendar
 
 # Optional: For enhanced analysis
 matplotlib>=3.5.0

@@ -1,5 +1,9 @@
 # Mississippi WMA Draw Hunt Analysis Project
 
+> **2026-27 season is live.** Application window: **July 15 – August 15, 2026**.  
+> Open the decision web app (`index.html`) or regenerate data with `python analysis/build_2026_decision_data.py`.  
+> Full write-up: `reports/analysis_2026_27.md`.
+
 A comprehensive analysis tool for Mississippi Wildlife Management Area (WMA) draw hunt opportunities, featuring a modern web application and data-driven recommendations. **Enhanced with moon phase and deer rut timing analysis for Yazoo County, Mississippi region.**
 
 ## 🌐 Live Web Application
