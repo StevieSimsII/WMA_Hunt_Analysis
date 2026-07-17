@@ -9,66 +9,65 @@ const categoryLabel = {
   senior: "Senior",
 };
 
+const PAGE_SIZE = 18;
+
 let DATA = null;
+let activeCategory = "all";
+let visibleCount = PAGE_SIZE;
 
-function competitionClass(label) {
-  if (!label) return "unknown";
+function score(n) {
+  return Number(n).toFixed(2);
+}
+
+function oddsTone(label) {
+  if (!label) return "tone-soft";
   const lower = label.toLowerCase();
-  if (lower.includes("unknown")) return "unknown";
-  if (lower.includes("very high") || lower.includes("extreme") || lower === "high") return "hot";
-  if (lower.includes("low") || lower.includes("very low")) return "cool";
-  return "";
+  if (lower.includes("unknown")) return "tone-soft";
+  if (lower.includes("high") || lower.includes("extreme")) return "tone-warn";
+  if (lower.includes("low")) return "tone-good";
+  return "tone-soft";
 }
 
-function formatScore(score) {
-  return Number(score).toFixed(2);
-}
-
-function competitionTag(hunt) {
-  const cls = competitionClass(hunt.competition_label);
-  return `<span class="tag ${cls}">${hunt.competition_label}</span>`;
+function whyLine(hunt, rank) {
+  if (rank === 0) return "Best overall mix of peak timing and workable historical odds.";
+  if (hunt.rut_period === "peak_rut") return "Sits inside the scarce Dec 29–Jan 4 peak rut window.";
+  if (hunt.rut_period === "pre_peak_rut") return "Pre-peak chasing window with solid hunt length.";
+  if (hunt.apps_per_permit_2025 != null && hunt.apps_per_permit_2025 <= 5) {
+    return "Historically softer draw pressure than most premium dates.";
+  }
+  if (hunt.category === "gun") return "Adds gun coverage without overlapping the other picks.";
+  return `${hunt.rut_label}. ${hunt.competition_label} competition in 2025.`;
 }
 
 async function loadData() {
-  const response = await fetch(DATA_URL);
-  if (!response.ok) {
-    throw new Error(`Failed to load ${DATA_URL}`);
-  }
-  return response.json();
-}
-
-function renderHero(data) {
-  document.getElementById("statHunts").textContent = data.totals.hunts.toLocaleString();
-  document.getElementById("statLocations").textContent = data.totals.locations.toLocaleString();
-  document.getElementById("statPeak").textContent = data.peak_rut.hunt_count.toLocaleString();
-  document.getElementById("deadlineLine").textContent =
-    `Application window: July 15 – August 15, 2026 · ${data.totals.permits.toLocaleString()} permit seats in inventory`;
+  const res = await fetch(DATA_URL);
+  if (!res.ok) throw new Error(`Could not load ${DATA_URL}`);
+  return res.json();
 }
 
 function renderStrategy(data) {
-  const list = document.getElementById("strategyList");
   const ranked = [...data.strategy].sort((a, b) => b.decision_score - a.decision_score);
-  list.innerHTML = ranked
-    .map((hunt, index) => {
+  const root = document.getElementById("strategyList");
+  root.innerHTML = ranked
+    .map((hunt, i) => {
       const odds =
         hunt.apps_per_permit_2025 != null
-          ? `${hunt.apps_per_permit_2025} apps/permit (2025)`
-          : "No 2025 history";
+          ? `${hunt.apps_per_permit_2025} apps/permit in 2025`
+          : "No 2025 history yet";
       return `
-        <li class="slate-item" style="animation-delay:${index * 80}ms">
-          <div class="rank">${String(index + 1).padStart(2, "0")}</div>
-          <div class="slate-body">
-            <span class="tag">${categoryLabel[hunt.category] || hunt.category}</span>
+        <li class="slate-item" style="animation-delay:${i * 70}ms">
+          <div class="slate-rank">${String(i + 1).padStart(2, "0")}</div>
+          <div>
             <h3>${hunt.hunt_name}</h3>
-            <div class="slate-meta">
-              <span>${hunt.date_label}</span>
-              <span>${hunt.permits_available} permits · ${hunt.duration_days} days</span>
-              <span>${hunt.rut_label}</span>
-              ${competitionTag(hunt)}
-              <span>${odds}</span>
-            </div>
+            <p class="slate-why">${whyLine(hunt, i)}</p>
+            <ul class="slate-facts">
+              <li>${hunt.date_label}</li>
+              <li>${categoryLabel[hunt.category] || hunt.category}</li>
+              <li>${hunt.permits_available} permits</li>
+              <li class="${oddsTone(hunt.competition_label)}">${odds}</li>
+              <li class="score">${score(hunt.decision_score)}</li>
+            </ul>
           </div>
-          <div class="score-pill" title="Decision score">${formatScore(hunt.decision_score)}</div>
         </li>
       `;
     })
@@ -76,15 +75,18 @@ function renderStrategy(data) {
 }
 
 function renderPeak(data) {
-  const root = document.getElementById("peakList");
-  root.innerHTML = data.peak_rut.top
+  document.getElementById("peakList").innerHTML = data.peak_rut.top
     .map(
       (hunt) => `
-      <article class="peak-card">
-        <span class="tag">${categoryLabel[hunt.category] || hunt.category}</span>
-        <h3>${hunt.hunt_name}</h3>
-        <p>${hunt.date_label} · ${hunt.permits_available} permits · score ${formatScore(hunt.decision_score)}</p>
-        <p>${competitionTag(hunt)} ${hunt.moon_label}</p>
+      <article class="peak-item">
+        <div>
+          <h3>${hunt.hunt_name}</h3>
+          <p>${hunt.date_label} · ${categoryLabel[hunt.category] || hunt.category} · ${hunt.permits_available} permits</p>
+        </div>
+        <div class="hunt-side">
+          <span class="score">${score(hunt.decision_score)}</span>
+          <small class="${oddsTone(hunt.competition_label)}">${hunt.competition_label}</small>
+        </div>
       </article>
     `
     )
@@ -92,47 +94,57 @@ function renderPeak(data) {
 }
 
 function renderOdds(data) {
-  const withOdds = data.hunts.filter((h) => h.apps_per_permit_2025 != null);
-  const sleepers = [...withOdds]
-    .filter((h) => ["archery", "gun", "primitive_weapon", "group"].includes(h.category))
-    .sort((a, b) => a.apps_per_permit_2025 - b.apps_per_permit_2025)
-    .slice(0, 8);
-  const hottest = [...withOdds]
-    .filter((h) => ["archery", "gun", "primitive_weapon", "group"].includes(h.category))
-    .sort((a, b) => b.apps_per_permit_2025 - a.apps_per_permit_2025)
-    .slice(0, 8);
+  const adult = data.hunts.filter((h) =>
+    ["archery", "gun", "primitive_weapon", "group"].includes(h.category)
+  );
+  const withOdds = adult.filter((h) => h.apps_per_permit_2025 != null);
+  const sleepers = [...withOdds].sort((a, b) => a.apps_per_permit_2025 - b.apps_per_permit_2025).slice(0, 6);
+  const hottest = [...withOdds].sort((a, b) => b.apps_per_permit_2025 - a.apps_per_permit_2025).slice(0, 6);
+  const maxHot = Math.max(...hottest.map((h) => h.apps_per_permit_2025), 1);
+
+  const sleeperMax = Math.max(...sleepers.map((h) => h.apps_per_permit_2025), 1);
+
+  document.getElementById("sleeperList").className = "pressure cool";
+  document.getElementById("hotList").className = "pressure hot";
 
   document.getElementById("sleeperList").innerHTML = sleepers
-    .map(
-      (h) => `
-      <li>
-        <span>${h.hunt_name}<br /><small>${h.date_label}</small></span>
-        <strong>${h.apps_per_permit_2025}</strong>
-      </li>
-    `
-    )
+    .map((h) => {
+      const width = Math.max(8, (h.apps_per_permit_2025 / sleeperMax) * 100);
+      return `
+        <li>
+          <div class="pressure-top">
+            <span>${h.hunt_name}</span>
+            <strong>${h.apps_per_permit_2025}</strong>
+          </div>
+          <div class="bar"><span style="width:${width}%"></span></div>
+        </li>
+      `;
+    })
     .join("");
 
   document.getElementById("hotList").innerHTML = hottest
-    .map(
-      (h) => `
-      <li>
-        <span>${h.hunt_name}<br /><small>${h.date_label}</small></span>
-        <strong>${h.apps_per_permit_2025}</strong>
-      </li>
-    `
-    )
+    .map((h) => {
+      const width = Math.max(8, (h.apps_per_permit_2025 / maxHot) * 100);
+      return `
+        <li>
+          <div class="pressure-top">
+            <span>${h.hunt_name}</span>
+            <strong>${h.apps_per_permit_2025}</strong>
+          </div>
+          <div class="bar"><span style="width:${width}%"></span></div>
+        </li>
+      `;
+    })
     .join("");
 }
 
 function filteredHunts() {
   const query = document.getElementById("filterQuery").value.trim().toLowerCase();
-  const category = document.getElementById("filterCategory").value;
   const rut = document.getElementById("filterRut").value;
   const sort = document.getElementById("filterSort").value;
 
   let rows = [...DATA.hunts];
-  if (category !== "all") rows = rows.filter((h) => h.category === category);
+  if (activeCategory !== "all") rows = rows.filter((h) => h.category === activeCategory);
   if (rut !== "all") rows = rows.filter((h) => h.rut_period === rut);
   if (query) {
     rows = rows.filter((h) =>
@@ -140,89 +152,122 @@ function filteredHunts() {
     );
   }
 
-  if (sort === "decision") {
-    rows.sort((a, b) => b.decision_score - a.decision_score);
-  } else if (sort === "odds") {
-    rows.sort((a, b) => {
-      const av = a.apps_per_permit_2025 ?? Number.POSITIVE_INFINITY;
-      const bv = b.apps_per_permit_2025 ?? Number.POSITIVE_INFINITY;
-      return av - bv;
-    });
-  } else if (sort === "date") {
-    rows.sort((a, b) => a.start_date.localeCompare(b.start_date));
-  } else if (sort === "permits") {
-    rows.sort((a, b) => b.permits_available - a.permits_available);
+  if (sort === "decision") rows.sort((a, b) => b.decision_score - a.decision_score);
+  if (sort === "odds") {
+    rows.sort((a, b) => (a.apps_per_permit_2025 ?? 9999) - (b.apps_per_permit_2025 ?? 9999));
   }
-
+  if (sort === "date") rows.sort((a, b) => a.start_date.localeCompare(b.start_date));
+  if (sort === "permits") rows.sort((a, b) => b.permits_available - a.permits_available);
   return rows;
 }
 
-function renderExplore() {
+function renderBrowse() {
   const rows = filteredHunts();
-  document.getElementById("resultMeta").textContent = `${rows.length} hunts shown`;
-  const list = document.getElementById("huntList");
-  const visible = rows.slice(0, 60);
-  list.innerHTML = visible
-    .map(
-      (hunt) => `
-      <article class="hunt-row">
-        <div>
-          <span class="tag">${categoryLabel[hunt.category] || hunt.category}</span>
-          <h3>${hunt.hunt_name}</h3>
-          <p>${hunt.wma_location}</p>
-        </div>
-        <div>
-          <p>${hunt.date_label}</p>
-          <p>${hunt.permits_available} permits · ${hunt.rut_label}</p>
-          <p>${competitionTag(hunt)}</p>
-        </div>
-        <div class="score-pill">${formatScore(hunt.decision_score)}</div>
-      </article>
-    `
-    )
+  const shown = rows.slice(0, visibleCount);
+  document.getElementById("resultMeta").textContent = `${rows.length} hunts · showing ${shown.length}`;
+
+  document.getElementById("huntList").innerHTML = shown
+    .map((hunt, index) => {
+      const odds =
+        hunt.apps_per_permit_2025 != null
+          ? `${hunt.apps_per_permit_2025} apps/permit in 2025`
+          : "No 2025 history";
+      return `
+        <article class="hunt" data-index="${index}">
+          <button class="hunt-summary" type="button" aria-expanded="false">
+            <div>
+              <h3>${hunt.hunt_name}</h3>
+              <p>${hunt.date_label} · ${categoryLabel[hunt.category] || hunt.category}</p>
+            </div>
+            <div class="hunt-side">
+              <span class="score">${score(hunt.decision_score)}</span>
+              <small class="${oddsTone(hunt.competition_label)}">${hunt.competition_label}</small>
+            </div>
+          </button>
+          <div class="hunt-detail">
+            <div>${hunt.wma_location}</div>
+            <div>${hunt.permits_available} permits · ${hunt.duration_days} days · ${hunt.rut_label}</div>
+            <div>${hunt.moon_label}</div>
+            <div class="${oddsTone(hunt.competition_label)}">${odds}</div>
+          </div>
+        </article>
+      `;
+    })
     .join("");
 
-  if (rows.length > 60) {
-    list.insertAdjacentHTML(
-      "beforeend",
-      `<p class="result-meta">Showing first 60 of ${rows.length}. Narrow filters to refine.</p>`
-    );
-  }
+  const more = document.getElementById("loadMore");
+  more.hidden = shown.length >= rows.length;
+
+  document.querySelectorAll(".hunt-summary").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".hunt");
+      const open = item.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+}
+
+function setupBrowse() {
+  document.querySelectorAll(".chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll(".chip").forEach((c) => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+      activeCategory = chip.dataset.category;
+      visibleCount = PAGE_SIZE;
+      renderBrowse();
+    });
+  });
+
+  ["filterQuery", "filterRut", "filterSort"].forEach((id) => {
+    const el = document.getElementById(id);
+    el.addEventListener("input", () => {
+      visibleCount = PAGE_SIZE;
+      renderBrowse();
+    });
+    el.addEventListener("change", () => {
+      visibleCount = PAGE_SIZE;
+      renderBrowse();
+    });
+  });
+
+  document.getElementById("loadMore").addEventListener("click", () => {
+    visibleCount += PAGE_SIZE;
+    renderBrowse();
+  });
 }
 
 function setupNav() {
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.querySelector(".nav");
-  toggle?.addEventListener("click", () => {
-    const open = nav.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  const btn = document.querySelector(".menu-btn");
+  const nav = document.getElementById("nav");
+  btn?.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
   });
-  nav?.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => nav.classList.remove("open"));
-  });
-}
-
-function setupFilters() {
-  ["filterQuery", "filterCategory", "filterRut", "filterSort"].forEach((id) => {
-    document.getElementById(id).addEventListener("input", renderExplore);
-    document.getElementById(id).addEventListener("change", renderExplore);
-  });
+  nav?.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      btn?.setAttribute("aria-expanded", "false");
+    })
+  );
 }
 
 async function init() {
   setupNav();
   try {
     DATA = await loadData();
-    renderHero(DATA);
+    document.getElementById("deadlineNote").textContent =
+      `Applications close August 15, 2026. ${DATA.totals.hunts} hunts scored across ${DATA.totals.locations} locations.`;
+    document.getElementById("footStats").textContent =
+      `${DATA.totals.hunts} hunts · ${DATA.totals.permits.toLocaleString()} permit seats`;
     renderStrategy(DATA);
     renderPeak(DATA);
     renderOdds(DATA);
-    setupFilters();
-    renderExplore();
-  } catch (error) {
-    console.error(error);
+    setupBrowse();
+    renderBrowse();
+  } catch (err) {
+    console.error(err);
     document.getElementById("strategyList").innerHTML =
-      `<li class="slate-item"><div class="slate-body"><h3>Could not load decision data.</h3><p>Check that decision_2026_27.json is available.</p></div></li>`;
+      `<li class="slate-item"><div><h3>Couldn’t load decision data.</h3><p class="slate-why">Make sure decision_2026_27.json is available.</p></div></li>`;
   }
 }
 

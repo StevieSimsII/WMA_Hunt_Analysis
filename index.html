@@ -7,204 +7,152 @@
   <meta name="description" content="Decision desk for Mississippi WMA deer draw hunts — 2026-27 season strategy, odds, and ranked opportunities." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="atmosphere" aria-hidden="true"></div>
-
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Draw Desk home">
-      <span class="brand-mark"></span>
-      <span class="brand-name">Draw Desk</span>
-    </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#strategy">Strategy</a>
-      <a href="#explore">Explore</a>
-      <a href="#peak">Peak Rut</a>
+  <header class="topbar">
+    <a class="wordmark" href="#top">Draw Desk</a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#slate">Slate</a>
+      <a href="#browse">Browse</a>
       <a href="#odds">Odds</a>
     </nav>
-    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span>
+    <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu">
+      Menu
     </button>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-copy">
-        <p class="brand-lockup">Draw Desk</p>
-        <h1>Your 2026–27 WMA deer draw decisions, ranked.</h1>
-        <p class="lede">
-          Official MDWFP hunt schedules scored against Yazoo-region rut timing,
-          moon phases, and 2025 draw competition.
+      <div class="hero-media" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="hero-brand">Draw Desk</p>
+        <h1>Pick your five Mississippi WMA deer draws with clearer odds.</h1>
+        <p class="hero-lede">
+          2026–27 schedules scored for rut timing, moon phase, and last year’s applicant pressure.
         </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#strategy">See application slate</a>
-          <a class="btn btn-ghost" href="#explore">Browse all hunts</a>
+        <div class="hero-cta">
+          <a class="btn btn-light" href="#slate">Open the slate</a>
+          <a class="btn btn-line" href="#browse">Browse hunts</a>
         </div>
-        <p class="deadline" id="deadlineLine">Application window: July 15 – August 15, 2026</p>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="river-plane"></div>
-        <div class="mist-plane"></div>
-        <div class="moon-orb"></div>
       </div>
     </section>
 
-    <section class="pulse" aria-label="Season snapshot">
-      <div class="pulse-item">
-        <span class="pulse-value" id="statHunts">—</span>
-        <span class="pulse-label">Hunts scored</span>
-      </div>
-      <div class="pulse-item">
-        <span class="pulse-value" id="statLocations">—</span>
-        <span class="pulse-label">WMA locations</span>
-      </div>
-      <div class="pulse-item">
-        <span class="pulse-value" id="statPeak">—</span>
-        <span class="pulse-label">Peak-rut hunts</span>
-      </div>
-      <div class="pulse-item">
-        <span class="pulse-value">5</span>
-        <span class="pulse-label">Max selections</span>
-      </div>
-    </section>
-
-    <section id="strategy" class="section">
-      <div class="section-intro">
-        <p class="eyebrow">Application slate</p>
-        <h2>Five picks. No date conflicts. Spread across places and methods.</h2>
-        <p>
-          Built for the MDWFP five-choice draw: peak timing first, then draw-odds
-          sleepers, then method diversity.
+    <section id="slate" class="band">
+      <div class="band-head">
+        <p class="kicker">Five-choice slate</p>
+        <h2>Apply these in order unless your calendar says otherwise.</h2>
+        <p class="sub">
+          No overlapping dates. Different WMAs. Mix of peak timing and better historical odds.
+          <span id="deadlineNote">Applications close August 15, 2026.</span>
         </p>
       </div>
       <ol class="slate" id="strategyList"></ol>
     </section>
 
-    <section id="peak" class="section section-alt">
-      <div class="section-intro">
-        <p class="eyebrow">Peak rut window</p>
-        <h2>December 29 – January 4 is scarce and decisive.</h2>
-        <p>
-          Only a handful of hunts sit inside the Yazoo/Delta prime window.
-          Protect at least one selection here if those dates work.
+    <section id="peak" class="band band-soft">
+      <div class="band-head">
+        <p class="kicker">Peak rut</p>
+        <h2>Dec 29 – Jan 4 is the scarce window.</h2>
+        <p class="sub">If those dates work, lock one of these into your five.</p>
+      </div>
+      <div class="peak-rail" id="peakList"></div>
+    </section>
+
+    <section id="browse" class="band">
+      <div class="band-head">
+        <p class="kicker">Browse</p>
+        <h2>Find a hunt that fits your week.</h2>
+        <p class="sub">Filter by weapon and season window, then sort by score or odds.</p>
+      </div>
+
+      <div class="browse-tools">
+        <div class="chip-row" role="group" aria-label="Weapon category">
+          <button type="button" class="chip is-active" data-category="all">All</button>
+          <button type="button" class="chip" data-category="archery">Archery</button>
+          <button type="button" class="chip" data-category="gun">Gun</button>
+          <button type="button" class="chip" data-category="primitive_weapon">Primitive</button>
+          <button type="button" class="chip" data-category="group">Group</button>
+          <button type="button" class="chip" data-category="youth">Youth</button>
+          <button type="button" class="chip" data-category="senior">Senior</button>
+        </div>
+
+        <div class="tool-row">
+          <label class="field grow">
+            <span class="sr-only">Search</span>
+            <input id="filterQuery" type="search" placeholder="Search WMA or hunt name" />
+          </label>
+          <label class="field">
+            <span class="sr-only">Rut period</span>
+            <select id="filterRut">
+              <option value="all">Any rut period</option>
+              <option value="peak_rut">Peak rut</option>
+              <option value="pre_peak_rut">Pre-peak</option>
+              <option value="pre_rut">Pre-rut</option>
+              <option value="post_rut">Post-rut</option>
+              <option value="late_season">Late season</option>
+            </select>
+          </label>
+          <label class="field">
+            <span class="sr-only">Sort</span>
+            <select id="filterSort">
+              <option value="decision">Best score</option>
+              <option value="odds">Best odds</option>
+              <option value="date">Soonest date</option>
+              <option value="permits">Most permits</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="browse-meta">
+        <p id="resultMeta">Loading…</p>
+      </div>
+      <div class="browse-list" id="huntList"></div>
+      <button type="button" class="btn btn-dark more-btn" id="loadMore" hidden>Show more</button>
+    </section>
+
+    <section id="odds" class="band band-soft">
+      <div class="band-head">
+        <p class="kicker">2025 pressure</p>
+        <h2>Where applicants piled up last year.</h2>
+        <p class="sub">Apps per permit from the 2025 deer draw. Lower is easier.</p>
+      </div>
+      <div class="odds-split">
+        <div>
+          <h3>Easier draws</h3>
+          <ul class="pressure" id="sleeperList"></ul>
+        </div>
+        <div>
+          <h3>Hardest draws</h3>
+          <ul class="pressure" id="hotList"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="band band-end">
+      <div class="band-head narrow">
+        <p class="kicker">Scoring</p>
+        <h2>Seventy percent hunt quality. Thirty percent draw odds.</h2>
+        <p class="sub">
+          Quality weighs rut timing first, then moon phase, hunt length, and permit count.
+          Odds come from 2025 apps-per-permit. New hunts without history stay unmarked.
         </p>
-      </div>
-      <div class="peak-grid" id="peakList"></div>
-    </section>
-
-    <section id="explore" class="section">
-      <div class="section-intro">
-        <p class="eyebrow">Decision browser</p>
-        <h2>Filter the full 2026–27 inventory.</h2>
-        <p>Search by WMA, weapon, rut period, or competition pressure.</p>
-      </div>
-
-      <form class="filters" id="filters" autocomplete="off">
-        <label>
-          <span>Search</span>
-          <input type="search" id="filterQuery" placeholder="Mahannah, Alligator, Goose Lake…" />
-        </label>
-        <label>
-          <span>Category</span>
-          <select id="filterCategory">
-            <option value="all">All categories</option>
-            <option value="archery">Archery</option>
-            <option value="gun">Gun</option>
-            <option value="primitive_weapon">Primitive weapon</option>
-            <option value="group">Group</option>
-            <option value="youth">Youth</option>
-            <option value="senior">Senior</option>
-          </select>
-        </label>
-        <label>
-          <span>Rut period</span>
-          <select id="filterRut">
-            <option value="all">All periods</option>
-            <option value="peak_rut">Peak rut</option>
-            <option value="pre_peak_rut">Pre-peak</option>
-            <option value="pre_rut">Pre-rut</option>
-            <option value="post_rut">Post-rut</option>
-            <option value="late_season">Late season</option>
-          </select>
-        </label>
-        <label>
-          <span>Sort</span>
-          <select id="filterSort">
-            <option value="decision">Decision score</option>
-            <option value="odds">Best odds</option>
-            <option value="date">Date</option>
-            <option value="permits">Permits</option>
-          </select>
-        </label>
-      </form>
-
-      <p class="result-meta" id="resultMeta"></p>
-      <div class="hunt-list" id="huntList"></div>
-    </section>
-
-    <section id="odds" class="section section-alt">
-      <div class="section-intro">
-        <p class="eyebrow">Competition lens</p>
-        <h2>Where 2025 applicants clustered — and where they didn’t.</h2>
-        <p>
-          Apps-per-permit from last year’s deer draw stats. New hunts like Alligator
-          WMA have no history yet and are flagged as unknown.
+        <p class="fine">
+          Built from MDWFP 2026 draw PDFs and 2025 WMA Deer Draw Stats. Independent — not affiliated with MDWFP.
         </p>
+        <a class="text-link" href="https://www.mdwfp.com/wildlife-hunting/wma-draw-hunts" target="_blank" rel="noopener">
+          Apply on MDWFP →
+        </a>
       </div>
-      <div class="odds-columns">
-        <div>
-          <h3>Lower-pressure sleepers</h3>
-          <ul class="odds-list" id="sleeperList"></ul>
-        </div>
-        <div>
-          <h3>Highest historical demand</h3>
-          <ul class="odds-list" id="hotList"></ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section method">
-      <div class="section-intro">
-        <p class="eyebrow">How scores work</p>
-        <h2>Quality timing plus realistic odds.</h2>
-      </div>
-      <div class="method-grid">
-        <div>
-          <strong>70%</strong>
-          <span>Hunt quality (rut, moon, duration, permits)</span>
-        </div>
-        <div>
-          <strong>30%</strong>
-          <span>Historical draw odds</span>
-        </div>
-        <div>
-          <strong>35%</strong>
-          <span>of quality · rut timing</span>
-        </div>
-        <div>
-          <strong>20%</strong>
-          <span>of quality · moon phase</span>
-        </div>
-        <div>
-          <strong>25%</strong>
-          <span>of quality · duration + permits</span>
-        </div>
-      </div>
-      <p class="fineprint">
-        Sources: MDWFP 2026 deer draw hunt PDFs and 2025 WMA Deer Draw Stats.
-        Independent analysis — not affiliated with MDWFP.
-      </p>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div>
-      <span class="brand-name">Draw Desk</span>
-      <p>Mississippi WMA deer draw decision data for the 2026–27 season.</p>
-    </div>
-    <a href="https://www.mdwfp.com/wildlife-hunting/wma-draw-hunts" rel="noopener" target="_blank">Apply on MDWFP</a>
+  <footer class="foot">
+    <span>Draw Desk · 2026–27</span>
+    <span id="footStats"></span>
   </footer>
 
   <script src="script.js"></script>
