@@ -3,7 +3,7 @@
   "season": "2026-27",
   "generated_at": "2026-07-18T00:18:25Z",
   "home_base": {
-    "name": "Stabbin Cabin",
+    "name": "The Camp",
     "address": "1149 Watertower Rd, Bentonia, MS",
     "lat": 32.6505,
     "lon": -90.3648
@@ -24,7 +24,7 @@
     ],
     "competition": "WMA Deer Draw Stats (2025)",
     "rut_region": "Yazoo County / Mississippi Delta peak rut Dec 29 \u2013 Jan 4",
-    "distances": "Driving miles/minutes from Stabbin Cabin via OSRM road network"
+    "distances": "Driving miles/minutes from The Camp via OSRM road network"
   },
   "totals": {
     "hunts": 289,
