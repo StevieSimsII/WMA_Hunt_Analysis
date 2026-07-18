@@ -480,13 +480,15 @@ def dates_overlap(a_start, a_end, b_start, b_end) -> bool:
     return a_start <= b_end and b_start <= a_end
 
 
-def build_strategy(scored: list[dict], n: int = 5) -> list[dict]:
-    """Build a diversified 5-hunt slate: peak timing + odds + method/location spread."""
+def build_strategy(scored: list[dict], n: int = 5, max_drive_miles: float = 120) -> list[dict]:
+    """Build a diversified 5-hunt slate near Stabbin Cabin when possible."""
     adult = [
         h
         for h in scored
         if h["category"] in {"archery", "gun", "primitive_weapon", "group"}
     ]
+    nearby = [h for h in adult if (h.get("miles_drive") or 999) <= max_drive_miles]
+    pool = nearby if len(nearby) >= n else adult
 
     def conflicts(hunt: dict, picks: list[dict]) -> bool:
         return any(
@@ -501,38 +503,35 @@ def build_strategy(scored: list[dict], n: int = 5) -> list[dict]:
             return False
         return True
 
+    def ranked(rows: list[dict]) -> list[dict]:
+        # Prefer higher decision score, then shorter drive from cabin.
+        return sorted(
+            rows,
+            key=lambda h: (-h["decision_score"], h.get("miles_drive") or 999),
+        )
+
     picks: list[dict] = []
 
-    # 1) Best peak-rut hunt
-    peak = sorted(
-        [h for h in adult if h["rut"]["period"] == "peak_rut"],
-        key=lambda h: h["decision_score"],
-        reverse=True,
-    )
-    for hunt in peak:
+    # 1) Best nearby peak-rut hunt
+    for hunt in ranked([h for h in pool if h["rut"]["period"] == "peak_rut"]):
         if can_add(hunt, picks):
             picks.append(hunt)
             break
 
-    # 2) Best pre-peak / chasing hunt
-    prepeak = sorted(
-        [h for h in adult if h["rut"]["period"] == "pre_peak_rut"],
-        key=lambda h: h["decision_score"],
-        reverse=True,
-    )
-    for hunt in prepeak:
+    # 2) Best nearby pre-peak / chasing hunt
+    for hunt in ranked([h for h in pool if h["rut"]["period"] == "pre_peak_rut"]):
         if can_add(hunt, picks):
             picks.append(hunt)
             break
 
-    # 3) Best sleeper (known low competition)
+    # 3) Best nearby sleeper (known low competition)
     sleepers = sorted(
         [
             h
-            for h in adult
+            for h in pool
             if h["apps_per_permit_2025"] is not None and h["apps_per_permit_2025"] <= 6
         ],
-        key=lambda h: (h["apps_per_permit_2025"], -h["decision_score"]),
+        key=lambda h: (h["apps_per_permit_2025"], -h["decision_score"], h.get("miles_drive") or 999),
     )
     for hunt in sleepers:
         if can_add(hunt, picks):
@@ -540,8 +539,7 @@ def build_strategy(scored: list[dict], n: int = 5) -> list[dict]:
             break
 
     # 4) Fill remaining with decision score while diversifying methods
-    remaining = sorted(adult, key=lambda h: h["decision_score"], reverse=True)
-    # Prefer unused methods, but require non-extreme competition when known
+    remaining = ranked(pool)
     for hunt in remaining:
         if len(picks) >= n:
             break
@@ -558,14 +556,38 @@ def build_strategy(scored: list[dict], n: int = 5) -> list[dict]:
             continue
         picks.append(hunt)
 
-    # Final fill ignoring method preference
-    for hunt in remaining:
+    # Final fill from nearby, then statewide if still short
+    for source in (remaining, ranked(adult)):
+        for hunt in source:
+            if len(picks) >= n:
+                break
+            if can_add(hunt, picks):
+                picks.append(hunt)
         if len(picks) >= n:
             break
-        if can_add(hunt, picks):
-            picks.append(hunt)
 
     return picks[:n]
+
+
+def load_cabin_locations() -> dict:
+    path = OUT_DATA / "locations_from_cabin.json"
+    if not path.exists():
+        return {}
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def attach_distance(hunt: dict, cabin_data: dict) -> dict:
+    locs = cabin_data.get("locations", {})
+    info = locs.get(hunt["wma_location"])
+    if not info:
+        hunt["miles_drive"] = None
+        hunt["minutes_drive"] = None
+        hunt["miles_straight"] = None
+        return hunt
+    hunt["miles_drive"] = info.get("miles_drive")
+    hunt["minutes_drive"] = info.get("minutes_drive")
+    hunt["miles_straight"] = info.get("miles_straight")
+    return hunt
 
 
 def serialize_hunt(h: dict) -> dict:
@@ -593,6 +615,9 @@ def serialize_hunt(h: dict) -> dict:
         "competition_score": h["competition_score"],
         "applications_2025": h["applications_2025"],
         "apps_per_permit_2025": h["apps_per_permit_2025"],
+        "miles_drive": h.get("miles_drive"),
+        "minutes_drive": h.get("minutes_drive"),
+        "miles_straight": h.get("miles_straight"),
     }
 
 
@@ -655,7 +680,8 @@ def main() -> None:
     stats = parse_stats(stats_text)
     print(f"Parsed historical stats entries: {len(stats)}")
 
-    scored = [score_hunt(h, stats) for h in all_hunts]
+    cabin_data = load_cabin_locations()
+    scored = [attach_distance(score_hunt(h, stats), cabin_data) for h in all_hunts]
     scored.sort(key=lambda h: h["decision_score"], reverse=True)
 
     # Category CSVs
@@ -693,9 +719,20 @@ def main() -> None:
     ][:12]
 
     locations = sorted({h["wma_location"] for h in scored})
+    home = cabin_data.get(
+        "home",
+        {
+            "name": "Stabbin Cabin",
+            "address": "1149 Watertower Rd, Bentonia, MS",
+            "lat": 32.6505,
+            "lon": -90.3648,
+        },
+    )
     summary = {
+        "brand": "Delta Draw Hunts",
         "season": "2026-27",
         "generated_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "home_base": home,
         "application_window": {
             "opens": "2026-07-15",
             "closes": "2026-08-15",
@@ -712,6 +749,7 @@ def main() -> None:
             ],
             "competition": "WMA Deer Draw Stats (2025)",
             "rut_region": "Yazoo County / Mississippi Delta peak rut Dec 29 – Jan 4",
+            "distances": "Driving miles/minutes from Stabbin Cabin via OSRM road network",
         },
         "totals": {
             "hunts": len(scored),
@@ -720,6 +758,11 @@ def main() -> None:
             "by_category": {
                 cat: len([h for h in scored if h["category"] == cat]) for cat in PDF_MAP
             },
+        },
+        "nearby": {
+            "within_60": len([h for h in scored if (h.get("miles_drive") or 999) <= 60]),
+            "within_90": len([h for h in scored if (h.get("miles_drive") or 999) <= 90]),
+            "within_120": len([h for h in scored if (h.get("miles_drive") or 999) <= 120]),
         },
         "peak_rut": {
             "window": "Dec 29, 2026 – Jan 4, 2027",

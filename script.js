@@ -13,6 +13,7 @@ const PAGE_SIZE = 18;
 
 let DATA = null;
 let activeCategory = "all";
+let maxDriveMiles = 90;
 let visibleCount = PAGE_SIZE;
 
 function score(n) {
@@ -28,15 +29,23 @@ function oddsTone(label) {
   return "tone-soft";
 }
 
+function driveText(hunt) {
+  if (hunt.miles_drive == null) return "Drive n/a";
+  const mins = hunt.minutes_drive != null ? ` · ~${hunt.minutes_drive} min` : "";
+  return `${hunt.miles_drive} mi drive${mins}`;
+}
+
 function whyLine(hunt, rank) {
-  if (rank === 0) return "Best overall mix of peak timing and workable historical odds.";
-  if (hunt.rut_period === "peak_rut") return "Sits inside the scarce Dec 29–Jan 4 peak rut window.";
-  if (hunt.rut_period === "pre_peak_rut") return "Pre-peak chasing window with solid hunt length.";
+  const drive =
+    hunt.miles_drive != null ? ` About ${hunt.miles_drive} miles from Stabbin Cabin.` : "";
+  if (rank === 0) return `Best overall mix of peak timing and workable odds.${drive}`;
+  if (hunt.rut_period === "peak_rut") return `Inside the scarce Dec 29–Jan 4 peak rut window.${drive}`;
+  if (hunt.rut_period === "pre_peak_rut") return `Pre-peak chasing window with solid hunt length.${drive}`;
   if (hunt.apps_per_permit_2025 != null && hunt.apps_per_permit_2025 <= 5) {
-    return "Historically softer draw pressure than most premium dates.";
+    return `Historically softer draw pressure than most premium dates.${drive}`;
   }
-  if (hunt.category === "gun") return "Adds gun coverage without overlapping the other picks.";
-  return `${hunt.rut_label}. ${hunt.competition_label} competition in 2025.`;
+  if (hunt.category === "gun") return `Adds gun coverage without overlapping the other picks.${drive}`;
+  return `${hunt.rut_label}. ${hunt.competition_label} competition in 2025.${drive}`;
 }
 
 async function loadData() {
@@ -47,8 +56,7 @@ async function loadData() {
 
 function renderStrategy(data) {
   const ranked = [...data.strategy].sort((a, b) => b.decision_score - a.decision_score);
-  const root = document.getElementById("strategyList");
-  root.innerHTML = ranked
+  document.getElementById("strategyList").innerHTML = ranked
     .map((hunt, i) => {
       const odds =
         hunt.apps_per_permit_2025 != null
@@ -63,7 +71,7 @@ function renderStrategy(data) {
             <ul class="slate-facts">
               <li>${hunt.date_label}</li>
               <li>${categoryLabel[hunt.category] || hunt.category}</li>
-              <li>${hunt.permits_available} permits</li>
+              <li>${driveText(hunt)}</li>
               <li class="${oddsTone(hunt.competition_label)}">${odds}</li>
               <li class="score">${score(hunt.decision_score)}</li>
             </ul>
@@ -81,7 +89,7 @@ function renderPeak(data) {
       <article class="peak-item">
         <div>
           <h3>${hunt.hunt_name}</h3>
-          <p>${hunt.date_label} · ${categoryLabel[hunt.category] || hunt.category} · ${hunt.permits_available} permits</p>
+          <p>${hunt.date_label} · ${categoryLabel[hunt.category] || hunt.category} · ${driveText(hunt)}</p>
         </div>
         <div class="hunt-side">
           <span class="score">${score(hunt.decision_score)}</span>
@@ -100,12 +108,8 @@ function renderOdds(data) {
   const withOdds = adult.filter((h) => h.apps_per_permit_2025 != null);
   const sleepers = [...withOdds].sort((a, b) => a.apps_per_permit_2025 - b.apps_per_permit_2025).slice(0, 6);
   const hottest = [...withOdds].sort((a, b) => b.apps_per_permit_2025 - a.apps_per_permit_2025).slice(0, 6);
-  const maxHot = Math.max(...hottest.map((h) => h.apps_per_permit_2025), 1);
-
   const sleeperMax = Math.max(...sleepers.map((h) => h.apps_per_permit_2025), 1);
-
-  document.getElementById("sleeperList").className = "pressure cool";
-  document.getElementById("hotList").className = "pressure hot";
+  const maxHot = Math.max(...hottest.map((h) => h.apps_per_permit_2025), 1);
 
   document.getElementById("sleeperList").innerHTML = sleepers
     .map((h) => {
@@ -144,6 +148,7 @@ function filteredHunts() {
   const sort = document.getElementById("filterSort").value;
 
   let rows = [...DATA.hunts];
+  rows = rows.filter((h) => (h.miles_drive ?? 9999) <= maxDriveMiles);
   if (activeCategory !== "all") rows = rows.filter((h) => h.category === activeCategory);
   if (rut !== "all") rows = rows.filter((h) => h.rut_period === rut);
   if (query) {
@@ -153,6 +158,7 @@ function filteredHunts() {
   }
 
   if (sort === "decision") rows.sort((a, b) => b.decision_score - a.decision_score);
+  if (sort === "drive") rows.sort((a, b) => (a.miles_drive ?? 9999) - (b.miles_drive ?? 9999));
   if (sort === "odds") {
     rows.sort((a, b) => (a.apps_per_permit_2025 ?? 9999) - (b.apps_per_permit_2025 ?? 9999));
   }
@@ -164,7 +170,9 @@ function filteredHunts() {
 function renderBrowse() {
   const rows = filteredHunts();
   const shown = rows.slice(0, visibleCount);
-  document.getElementById("resultMeta").textContent = `${rows.length} hunts · showing ${shown.length}`;
+  const label = maxDriveMiles >= 250 ? "statewide" : `within ${maxDriveMiles} mi`;
+  document.getElementById("resultMeta").textContent =
+    `${rows.length} hunts ${label} of Stabbin Cabin · showing ${shown.length}`;
 
   document.getElementById("huntList").innerHTML = shown
     .map((hunt, index) => {
@@ -177,7 +185,7 @@ function renderBrowse() {
           <button class="hunt-summary" type="button" aria-expanded="false">
             <div>
               <h3>${hunt.hunt_name}</h3>
-              <p>${hunt.date_label} · ${categoryLabel[hunt.category] || hunt.category}</p>
+              <p>${hunt.date_label} · ${categoryLabel[hunt.category] || hunt.category} · ${driveText(hunt)}</p>
             </div>
             <div class="hunt-side">
               <span class="score">${score(hunt.decision_score)}</span>
@@ -188,6 +196,7 @@ function renderBrowse() {
             <div>${hunt.wma_location}</div>
             <div>${hunt.permits_available} permits · ${hunt.duration_days} days · ${hunt.rut_label}</div>
             <div>${hunt.moon_label}</div>
+            <div>${driveText(hunt)}</div>
             <div class="${oddsTone(hunt.competition_label)}">${odds}</div>
           </div>
         </article>
@@ -195,8 +204,7 @@ function renderBrowse() {
     })
     .join("");
 
-  const more = document.getElementById("loadMore");
-  more.hidden = shown.length >= rows.length;
+  document.getElementById("loadMore").hidden = shown.length >= rows.length;
 
   document.querySelectorAll(".hunt-summary").forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -205,6 +213,17 @@ function renderBrowse() {
       btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
   });
+}
+
+function setDriveMiles(miles) {
+  maxDriveMiles = Number(miles);
+  document.getElementById("filterDrive").value = String(maxDriveMiles);
+  document.getElementById("driveValue").textContent = String(maxDriveMiles);
+  document.querySelectorAll(".preset").forEach((btn) => {
+    btn.classList.toggle("is-active", Number(btn.dataset.miles) === maxDriveMiles);
+  });
+  visibleCount = PAGE_SIZE;
+  renderBrowse();
 }
 
 function setupBrowse() {
@@ -218,16 +237,22 @@ function setupBrowse() {
     });
   });
 
+  document.getElementById("filterDrive").addEventListener("input", (e) => {
+    setDriveMiles(e.target.value);
+  });
+
+  document.querySelectorAll(".preset").forEach((btn) => {
+    btn.addEventListener("click", () => setDriveMiles(btn.dataset.miles));
+  });
+
   ["filterQuery", "filterRut", "filterSort"].forEach((id) => {
     const el = document.getElementById(id);
-    el.addEventListener("input", () => {
+    const handler = () => {
       visibleCount = PAGE_SIZE;
       renderBrowse();
-    });
-    el.addEventListener("change", () => {
-      visibleCount = PAGE_SIZE;
-      renderBrowse();
-    });
+    };
+    el.addEventListener("input", handler);
+    el.addEventListener("change", handler);
   });
 
   document.getElementById("loadMore").addEventListener("click", () => {
@@ -255,15 +280,16 @@ async function init() {
   setupNav();
   try {
     DATA = await loadData();
+    const home = DATA.home_base?.address || "1149 Watertower Rd, Bentonia, MS";
     document.getElementById("deadlineNote").textContent =
-      `Applications close August 15, 2026. ${DATA.totals.hunts} hunts scored across ${DATA.totals.locations} locations.`;
+      `Applications close August 15, 2026. ${DATA.totals.hunts} hunts scored from ${home}.`;
     document.getElementById("footStats").textContent =
-      `${DATA.totals.hunts} hunts · ${DATA.totals.permits.toLocaleString()} permit seats`;
+      `${DATA.totals.hunts} hunts · ${DATA.nearby?.within_90 ?? "—"} within 90 mi`;
     renderStrategy(DATA);
     renderPeak(DATA);
     renderOdds(DATA);
     setupBrowse();
-    renderBrowse();
+    setDriveMiles(90);
   } catch (err) {
     console.error(err);
     document.getElementById("strategyList").innerHTML =

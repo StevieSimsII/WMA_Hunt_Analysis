@@ -1,6 +1,6 @@
 # Mississippi WMA Deer Draw Analysis — 2026-27
 
-**Generated:** 2026-07-17T16:52:03Z
+**Generated:** 2026-07-18T00:18:25Z
 **Application window:** July 15 – August 15, 2026
 **Hunts scored:** 289 across 23 locations
 **Permit seats represented:** 4319
@@ -16,10 +16,10 @@
 ## Recommended 5-hunt application slate
 
 1. **Yockanookany - PW Hunt 4** — Dec 28, 2026 – Jan 10, 2027 · 50 permits · score 3.59 · Peak Rut (Prime Time) · Low competition (2.4 apps/permit in 2025)
-2. **Charles Ray Nix - PW Hunt 4** — Dec 14-20, 2026 · 50 permits · score 2.74 · Pre-Peak Rut (Chasing Activity) · Moderate competition (8.6 apps/permit in 2025)
+2. **Natchez State Park - Archery Hunt 13** — Dec 24-27, 2026 · 18 permits · score 2.57 · Pre-Peak Rut (Chasing Activity) · Low competition (4.94 apps/permit in 2025)
 3. **Phil Bryant (Goose Lake Unit) - Archery Hunt 5** — Oct 29 – Nov 1, 2026 · 24 permits · score 2.45 · Pre-Rut (Building Activity) · Low competition (2.25 apps/permit in 2025)
-4. **Hell Creek - Gun Hunt 2** — Oct 8-11, 2026 · 25 permits · score 2.14 · Pre-Rut (Building Activity) · High competition (10.8 apps/permit in 2025)
-5. **Twin Oaks - PW Hunt 1** — Nov 5-6, 2026 · 15 permits · score 2.14 · Pre-Rut (Building Activity) · Moderate competition (8.27 apps/permit in 2025)
+4. **Canemount - Gun Hunt 9** — Jan 21-24, 2027 · 12 permits · score 1.44 · Late Season (Food Focus) · High competition (19.5 apps/permit in 2025)
+5. **Phil Bryant (Ten Point Unit) - Gun Hunt 1** — Dec 3-6, 2026 · 24 permits · score 1.43 · Pre-Rut (Building Activity) · Extreme competition (43.58 apps/permit in 2025)
 
 ## Peak rut opportunities
 

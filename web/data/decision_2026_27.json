@@ -1,6 +1,13 @@
 {
+  "brand": "Delta Draw Hunts",
   "season": "2026-27",
-  "generated_at": "2026-07-17T16:52:03Z",
+  "generated_at": "2026-07-18T00:18:25Z",
+  "home_base": {
+    "name": "Stabbin Cabin",
+    "address": "1149 Watertower Rd, Bentonia, MS",
+    "lat": 32.6505,
+    "lon": -90.3648
+  },
   "application_window": {
     "opens": "2026-07-15",
     "closes": "2026-08-15",
@@ -16,7 +23,8 @@
       "WMA Senior Deer Draw Hunts (2026)"
     ],
     "competition": "WMA Deer Draw Stats (2025)",
-    "rut_region": "Yazoo County / Mississippi Delta peak rut Dec 29 \u2013 Jan 4"
+    "rut_region": "Yazoo County / Mississippi Delta peak rut Dec 29 \u2013 Jan 4",
+    "distances": "Driving miles/minutes from Stabbin Cabin via OSRM road network"
   },
   "totals": {
     "hunts": 289,
@@ -30,6 +38,11 @@
       "youth": 47,
       "senior": 10
     }
+  },
+  "nearby": {
+    "within_60": 144,
+    "within_90": 189,
+    "within_120": 235
   },
   "peak_rut": {
     "window": "Dec 29, 2026 \u2013 Jan 4, 2027",
@@ -58,7 +71,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 120,
-        "apps_per_permit_2025": 2.4
+        "apps_per_permit_2025": 2.4,
+        "miles_drive": 89.5,
+        "minutes_drive": 129,
+        "miles_straight": 66.4
       },
       {
         "id": "primitive_weapon-charles-ray-nix---pw-hunt-6",
@@ -83,7 +99,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 245,
-        "apps_per_permit_2025": 4.9
+        "apps_per_permit_2025": 4.9,
+        "miles_drive": 154.3,
+        "minutes_drive": 188,
+        "miles_straight": 127.8
       },
       {
         "id": "primitive_weapon-alligator---pw-hunt-6",
@@ -108,7 +127,10 @@
         "competition_label": "Unknown (new or unmatched)",
         "competition_score": 2.5,
         "applications_2025": null,
-        "apps_per_permit_2025": null
+        "apps_per_permit_2025": null,
+        "miles_drive": 59.8,
+        "minutes_drive": 90,
+        "miles_straight": 41.9
       },
       {
         "id": "archery-natchez-state-park---archery-hunt-14",
@@ -133,7 +155,10 @@
         "competition_label": "Moderate",
         "competition_score": 3.0,
         "applications_2025": 165,
-        "apps_per_permit_2025": 9.17
+        "apps_per_permit_2025": 9.17,
+        "miles_drive": 118.0,
+        "minutes_drive": 154,
+        "miles_straight": 88.4
       },
       {
         "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-14",
@@ -158,7 +183,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 287,
-        "apps_per_permit_2025": 11.96
+        "apps_per_permit_2025": 11.96,
+        "miles_drive": 44.8,
+        "minutes_drive": 77,
+        "miles_straight": 28.3
       },
       {
         "id": "primitive_weapon-sky-lake---pw-hunt-8",
@@ -183,7 +211,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 210,
-        "apps_per_permit_2025": 14.0
+        "apps_per_permit_2025": 14.0,
+        "miles_drive": 52.9,
+        "minutes_drive": 84,
+        "miles_straight": 45.6
       }
     ]
   },
@@ -229,32 +260,38 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 120,
-      "apps_per_permit_2025": 2.4
+      "apps_per_permit_2025": 2.4,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
-      "id": "primitive_weapon-charles-ray-nix---pw-hunt-4",
-      "hunt_name": "Charles Ray Nix - PW Hunt 4",
-      "hunt_type": "Deer Primitive Weapon",
-      "category": "primitive_weapon",
-      "wma_location": "Charles Ray Nix",
-      "hunt_number": "4",
-      "start_date": "2026-12-14",
-      "end_date": "2026-12-20",
-      "date_label": "Dec 14-20, 2026",
-      "permits_available": 50,
-      "duration_days": 7,
-      "decision_score": 2.74,
-      "quality_score": 2.62,
+      "id": "archery-natchez-state-park---archery-hunt-13",
+      "hunt_name": "Natchez State Park - Archery Hunt 13",
+      "hunt_type": "Deer Archery",
+      "category": "archery",
+      "wma_location": "Natchez State Park",
+      "hunt_number": "13",
+      "start_date": "2026-12-24",
+      "end_date": "2026-12-27",
+      "date_label": "Dec 24-27, 2026",
+      "permits_available": 18,
+      "duration_days": 4,
+      "decision_score": 2.57,
+      "quality_score": 1.96,
       "rut_period": "pre_peak_rut",
       "rut_label": "Pre-Peak Rut (Chasing Activity)",
       "rut_score": 4,
-      "moon_phase": "First Quarter",
-      "moon_label": "Good (Quarter Moon)",
-      "moon_score": 1,
-      "competition_label": "Moderate",
-      "competition_score": 3.0,
-      "applications_2025": 430,
-      "apps_per_permit_2025": 8.6
+      "moon_phase": "Last Quarter",
+      "moon_label": "Fair (Neutral)",
+      "moon_score": 0.4,
+      "competition_label": "Low",
+      "competition_score": 4.0,
+      "applications_2025": 89,
+      "apps_per_permit_2025": 4.94,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-5",
@@ -279,57 +316,66 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 54,
-      "apps_per_permit_2025": 2.25
+      "apps_per_permit_2025": 2.25,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
-      "id": "gun-hell-creek---gun-hunt-2",
-      "hunt_name": "Hell Creek - Gun Hunt 2",
+      "id": "gun-canemount---gun-hunt-9",
+      "hunt_name": "Canemount - Gun Hunt 9",
       "hunt_type": "Deer Gun",
       "category": "gun",
-      "wma_location": "Hell Creek",
-      "hunt_number": "2",
-      "start_date": "2026-10-08",
-      "end_date": "2026-10-11",
-      "date_label": "Oct 8-11, 2026",
-      "permits_available": 25,
+      "wma_location": "Canemount",
+      "hunt_number": "9",
+      "start_date": "2027-01-21",
+      "end_date": "2027-01-24",
+      "date_label": "Jan 21-24, 2027",
+      "permits_available": 12,
       "duration_days": 4,
-      "decision_score": 2.14,
-      "quality_score": 2.2,
-      "rut_period": "pre_rut",
-      "rut_label": "Pre-Rut (Building Activity)",
-      "rut_score": 3,
-      "moon_phase": "New",
-      "moon_label": "Excellent (New Moon Period)",
-      "moon_score": 3,
+      "decision_score": 1.44,
+      "quality_score": 1.2,
+      "rut_period": "late_season",
+      "rut_label": "Late Season (Food Focus)",
+      "rut_score": 2,
+      "moon_phase": "First Quarter",
+      "moon_label": "Fair (Neutral)",
+      "moon_score": 0.4,
       "competition_label": "High",
       "competition_score": 2.0,
-      "applications_2025": 270,
-      "apps_per_permit_2025": 10.8
+      "applications_2025": 234,
+      "apps_per_permit_2025": 19.5,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
-      "id": "primitive_weapon-twin-oaks---pw-hunt-1",
-      "hunt_name": "Twin Oaks - PW Hunt 1",
-      "hunt_type": "Deer Primitive Weapon",
-      "category": "primitive_weapon",
-      "wma_location": "Twin Oaks",
+      "id": "gun-phil-bryant-(ten-point-unit)---gun-hunt-1",
+      "hunt_name": "Phil Bryant (Ten Point Unit) - Gun Hunt 1",
+      "hunt_type": "Deer Gun",
+      "category": "gun",
+      "wma_location": "Phil Bryant (Ten Point Unit)",
       "hunt_number": "1",
-      "start_date": "2026-11-05",
-      "end_date": "2026-11-06",
-      "date_label": "Nov 5-6, 2026",
-      "permits_available": 15,
-      "duration_days": 2,
-      "decision_score": 2.14,
-      "quality_score": 1.77,
+      "start_date": "2026-12-03",
+      "end_date": "2026-12-06",
+      "date_label": "Dec 3-6, 2026",
+      "permits_available": 24,
+      "duration_days": 4,
+      "decision_score": 1.43,
+      "quality_score": 1.83,
       "rut_period": "pre_rut",
       "rut_label": "Pre-Rut (Building Activity)",
       "rut_score": 3,
       "moon_phase": "New",
       "moon_label": "Good (Quarter Moon)",
-      "moon_score": 2.1,
-      "competition_label": "Moderate",
-      "competition_score": 3.0,
-      "applications_2025": 124,
-      "apps_per_permit_2025": 8.27
+      "moon_score": 1.2,
+      "competition_label": "Extreme",
+      "competition_score": 0.5,
+      "applications_2025": 1046,
+      "apps_per_permit_2025": 43.58,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     }
   ],
   "top_overall": [
@@ -356,7 +402,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 120,
-      "apps_per_permit_2025": 2.4
+      "apps_per_permit_2025": 2.4,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-2",
@@ -381,7 +430,10 @@
       "competition_label": "Very Low",
       "competition_score": 5.0,
       "applications_2025": 88,
-      "apps_per_permit_2025": 1.76
+      "apps_per_permit_2025": 1.76,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-6",
@@ -406,7 +458,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 245,
-      "apps_per_permit_2025": 4.9
+      "apps_per_permit_2025": 4.9,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-3",
@@ -431,7 +486,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 113,
-      "apps_per_permit_2025": 2.26
+      "apps_per_permit_2025": 2.26,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-1",
@@ -456,7 +514,10 @@
       "competition_label": "Very Low",
       "competition_score": 5.0,
       "applications_2025": 65,
-      "apps_per_permit_2025": 1.3
+      "apps_per_permit_2025": 1.3,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-7",
@@ -481,7 +542,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 178,
-      "apps_per_permit_2025": 3.56
+      "apps_per_permit_2025": 3.56,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-5",
@@ -506,7 +570,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 111,
-      "apps_per_permit_2025": 2.22
+      "apps_per_permit_2025": 2.22,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-3",
@@ -531,7 +598,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 438,
-      "apps_per_permit_2025": 8.76
+      "apps_per_permit_2025": 8.76,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-6",
@@ -556,7 +626,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-4",
@@ -581,7 +654,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 430,
-      "apps_per_permit_2025": 8.6
+      "apps_per_permit_2025": 8.6,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-2",
@@ -606,7 +682,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 66,
-      "apps_per_permit_2025": 2.75
+      "apps_per_permit_2025": 2.75,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-2",
@@ -631,7 +710,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 88,
-      "apps_per_permit_2025": 4.89
+      "apps_per_permit_2025": 4.89,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-5",
@@ -656,7 +738,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 259,
-      "apps_per_permit_2025": 5.18
+      "apps_per_permit_2025": 5.18,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-14",
@@ -681,7 +766,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 165,
-      "apps_per_permit_2025": 9.17
+      "apps_per_permit_2025": 9.17,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-6",
@@ -706,7 +794,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 58,
-      "apps_per_permit_2025": 2.42
+      "apps_per_permit_2025": 2.42,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     }
   ],
   "top_by_category": {
@@ -734,7 +825,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 66,
-        "apps_per_permit_2025": 2.75
+        "apps_per_permit_2025": 2.75,
+        "miles_drive": 44.8,
+        "minutes_drive": 77,
+        "miles_straight": 28.3
       },
       {
         "id": "archery-natchez-state-park---archery-hunt-2",
@@ -759,7 +853,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 88,
-        "apps_per_permit_2025": 4.89
+        "apps_per_permit_2025": 4.89,
+        "miles_drive": 118.0,
+        "minutes_drive": 154,
+        "miles_straight": 88.4
       },
       {
         "id": "archery-natchez-state-park---archery-hunt-14",
@@ -784,7 +881,10 @@
         "competition_label": "Moderate",
         "competition_score": 3.0,
         "applications_2025": 165,
-        "apps_per_permit_2025": 9.17
+        "apps_per_permit_2025": 9.17,
+        "miles_drive": 118.0,
+        "minutes_drive": 154,
+        "miles_straight": 88.4
       },
       {
         "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-6",
@@ -809,7 +909,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 58,
-        "apps_per_permit_2025": 2.42
+        "apps_per_permit_2025": 2.42,
+        "miles_drive": 44.8,
+        "minutes_drive": 77,
+        "miles_straight": 28.3
       },
       {
         "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-7",
@@ -834,7 +937,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 62,
-        "apps_per_permit_2025": 2.58
+        "apps_per_permit_2025": 2.58,
+        "miles_drive": 44.8,
+        "minutes_drive": 77,
+        "miles_straight": 28.3
       },
       {
         "id": "archery-natchez-state-park---archery-hunt-13",
@@ -859,7 +965,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 89,
-        "apps_per_permit_2025": 4.94
+        "apps_per_permit_2025": 4.94,
+        "miles_drive": 118.0,
+        "minutes_drive": 154,
+        "miles_straight": 88.4
       },
       {
         "id": "archery-natchez-state-park---archery-hunt-6",
@@ -884,7 +993,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 62,
-        "apps_per_permit_2025": 3.44
+        "apps_per_permit_2025": 3.44,
+        "miles_drive": 118.0,
+        "minutes_drive": 154,
+        "miles_straight": 88.4
       },
       {
         "id": "archery-natchez-state-park---archery-hunt-7",
@@ -909,7 +1021,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 57,
-        "apps_per_permit_2025": 3.17
+        "apps_per_permit_2025": 3.17,
+        "miles_drive": 118.0,
+        "minutes_drive": 154,
+        "miles_straight": 88.4
       }
     ],
     "gun": [
@@ -936,7 +1051,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 270,
-        "apps_per_permit_2025": 10.8
+        "apps_per_permit_2025": 10.8,
+        "miles_drive": 232.0,
+        "minutes_drive": 283,
+        "miles_straight": 170.4
       },
       {
         "id": "gun-hell-creek---gun-hunt-3",
@@ -961,7 +1079,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 305,
-        "apps_per_permit_2025": 12.2
+        "apps_per_permit_2025": 12.2,
+        "miles_drive": 232.0,
+        "minutes_drive": 283,
+        "miles_straight": 170.4
       },
       {
         "id": "gun-mahannah---gun-hunt-7",
@@ -986,7 +1107,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 319,
-        "apps_per_permit_2025": 15.95
+        "apps_per_permit_2025": 15.95,
+        "miles_drive": 44.9,
+        "minutes_drive": 81,
+        "miles_straight": 30.9
       },
       {
         "id": "gun-hell-creek---gun-hunt-1",
@@ -1011,7 +1135,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 316,
-        "apps_per_permit_2025": 12.64
+        "apps_per_permit_2025": 12.64,
+        "miles_drive": 232.0,
+        "minutes_drive": 283,
+        "miles_straight": 170.4
       },
       {
         "id": "gun-canemount---gun-hunt-6",
@@ -1036,7 +1163,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 838,
-        "apps_per_permit_2025": 69.83
+        "apps_per_permit_2025": 69.83,
+        "miles_drive": 93.1,
+        "minutes_drive": 122,
+        "miles_straight": 64.7
       },
       {
         "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-7",
@@ -1061,7 +1191,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 189,
-        "apps_per_permit_2025": 15.75
+        "apps_per_permit_2025": 15.75,
+        "miles_drive": 47.4,
+        "minutes_drive": 91,
+        "miles_straight": 32.2
       },
       {
         "id": "gun-pascagoula-river-(lbtc-unit)---gun-hunt-2",
@@ -1086,7 +1219,10 @@
         "competition_label": "Very High",
         "competition_score": 1.0,
         "applications_2025": 150,
-        "apps_per_permit_2025": 25.0
+        "apps_per_permit_2025": 25.0,
+        "miles_drive": 203.8,
+        "minutes_drive": 263,
+        "miles_straight": 171.1
       },
       {
         "id": "gun-phil-bryant-(ten-point-unit)---gun-hunt-2",
@@ -1111,7 +1247,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 1461,
-        "apps_per_permit_2025": 60.88
+        "apps_per_permit_2025": 60.88,
+        "miles_drive": 43.9,
+        "minutes_drive": 73,
+        "miles_straight": 30.3
       }
     ],
     "primitive_weapon": [
@@ -1138,7 +1277,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 120,
-        "apps_per_permit_2025": 2.4
+        "apps_per_permit_2025": 2.4,
+        "miles_drive": 89.5,
+        "minutes_drive": 129,
+        "miles_straight": 66.4
       },
       {
         "id": "primitive_weapon-yockanookany---pw-hunt-2",
@@ -1163,7 +1305,10 @@
         "competition_label": "Very Low",
         "competition_score": 5.0,
         "applications_2025": 88,
-        "apps_per_permit_2025": 1.76
+        "apps_per_permit_2025": 1.76,
+        "miles_drive": 89.5,
+        "minutes_drive": 129,
+        "miles_straight": 66.4
       },
       {
         "id": "primitive_weapon-charles-ray-nix---pw-hunt-6",
@@ -1188,7 +1333,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 245,
-        "apps_per_permit_2025": 4.9
+        "apps_per_permit_2025": 4.9,
+        "miles_drive": 154.3,
+        "minutes_drive": 188,
+        "miles_straight": 127.8
       },
       {
         "id": "primitive_weapon-yockanookany---pw-hunt-3",
@@ -1213,7 +1361,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 113,
-        "apps_per_permit_2025": 2.26
+        "apps_per_permit_2025": 2.26,
+        "miles_drive": 89.5,
+        "minutes_drive": 129,
+        "miles_straight": 66.4
       },
       {
         "id": "primitive_weapon-yockanookany---pw-hunt-1",
@@ -1238,7 +1389,10 @@
         "competition_label": "Very Low",
         "competition_score": 5.0,
         "applications_2025": 65,
-        "apps_per_permit_2025": 1.3
+        "apps_per_permit_2025": 1.3,
+        "miles_drive": 89.5,
+        "minutes_drive": 129,
+        "miles_straight": 66.4
       },
       {
         "id": "primitive_weapon-charles-ray-nix---pw-hunt-7",
@@ -1263,7 +1417,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 178,
-        "apps_per_permit_2025": 3.56
+        "apps_per_permit_2025": 3.56,
+        "miles_drive": 154.3,
+        "minutes_drive": 188,
+        "miles_straight": 127.8
       },
       {
         "id": "primitive_weapon-yockanookany---pw-hunt-5",
@@ -1288,7 +1445,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 111,
-        "apps_per_permit_2025": 2.22
+        "apps_per_permit_2025": 2.22,
+        "miles_drive": 89.5,
+        "minutes_drive": 129,
+        "miles_straight": 66.4
       },
       {
         "id": "primitive_weapon-charles-ray-nix---pw-hunt-3",
@@ -1313,7 +1473,10 @@
         "competition_label": "Moderate",
         "competition_score": 3.0,
         "applications_2025": 438,
-        "apps_per_permit_2025": 8.76
+        "apps_per_permit_2025": 8.76,
+        "miles_drive": 154.3,
+        "minutes_drive": 188,
+        "miles_straight": 127.8
       }
     ],
     "group": [
@@ -1340,7 +1503,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 235,
-        "apps_per_permit_2025": 58.75
+        "apps_per_permit_2025": 58.75,
+        "miles_drive": 47.0,
+        "minutes_drive": 89,
+        "miles_straight": 31.8
       },
       {
         "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-4",
@@ -1365,7 +1531,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 2540,
-        "apps_per_permit_2025": 635.0
+        "apps_per_permit_2025": 635.0,
+        "miles_drive": 47.0,
+        "minutes_drive": 89,
+        "miles_straight": 31.8
       },
       {
         "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-6",
@@ -1390,7 +1559,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 2157,
-        "apps_per_permit_2025": 539.25
+        "apps_per_permit_2025": 539.25,
+        "miles_drive": 47.0,
+        "minutes_drive": 89,
+        "miles_straight": 31.8
       },
       {
         "id": "group-cossar-state-park---limited-weapon-hunt-2",
@@ -1415,7 +1587,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 299,
-        "apps_per_permit_2025": 299.0
+        "apps_per_permit_2025": 299.0,
+        "miles_drive": 140.5,
+        "minutes_drive": 181,
+        "miles_straight": 114.4
       },
       {
         "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-5",
@@ -1440,7 +1615,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 1519,
-        "apps_per_permit_2025": 379.75
+        "apps_per_permit_2025": 379.75,
+        "miles_drive": 47.0,
+        "minutes_drive": 89,
+        "miles_straight": 31.8
       },
       {
         "id": "group-cossar-state-park---limited-weapon-hunt-3",
@@ -1465,7 +1643,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 297,
-        "apps_per_permit_2025": 297.0
+        "apps_per_permit_2025": 297.0,
+        "miles_drive": 140.5,
+        "minutes_drive": 181,
+        "miles_straight": 114.4
       },
       {
         "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-1",
@@ -1490,7 +1671,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 1347,
-        "apps_per_permit_2025": 336.75
+        "apps_per_permit_2025": 336.75,
+        "miles_drive": 47.0,
+        "minutes_drive": 89,
+        "miles_straight": 31.8
       },
       {
         "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-2",
@@ -1515,7 +1699,10 @@
         "competition_label": "Extreme",
         "competition_score": 0.5,
         "applications_2025": 1797,
-        "apps_per_permit_2025": 449.25
+        "apps_per_permit_2025": 449.25,
+        "miles_drive": 47.0,
+        "minutes_drive": 89,
+        "miles_straight": 31.8
       }
     ],
     "youth": [
@@ -1542,7 +1729,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 50,
-        "apps_per_permit_2025": 5.0
+        "apps_per_permit_2025": 5.0,
+        "miles_drive": 118.0,
+        "minutes_drive": 154,
+        "miles_straight": 88.4
       },
       {
         "id": "youth-black-prairie---youth-hunt-3",
@@ -1567,7 +1757,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 58,
-        "apps_per_permit_2025": 3.87
+        "apps_per_permit_2025": 3.87,
+        "miles_drive": 173.3,
+        "minutes_drive": 214,
+        "miles_straight": 115.2
       },
       {
         "id": "youth-phil-bryant-(ten-point-unit)---youth-hunt-2",
@@ -1592,7 +1785,10 @@
         "competition_label": "Moderate",
         "competition_score": 3.0,
         "applications_2025": 186,
-        "apps_per_permit_2025": 7.75
+        "apps_per_permit_2025": 7.75,
+        "miles_drive": 43.9,
+        "minutes_drive": 73,
+        "miles_straight": 30.3
       },
       {
         "id": "youth-phil-bryant-(ten-point-unit)---youth-hunt-1",
@@ -1617,7 +1813,10 @@
         "competition_label": "Moderate",
         "competition_score": 3.0,
         "applications_2025": 160,
-        "apps_per_permit_2025": 6.67
+        "apps_per_permit_2025": 6.67,
+        "miles_drive": 43.9,
+        "minutes_drive": 73,
+        "miles_straight": 30.3
       },
       {
         "id": "youth-natchez-state-park---youth-hunt-4",
@@ -1642,7 +1841,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 45,
-        "apps_per_permit_2025": 4.5
+        "apps_per_permit_2025": 4.5,
+        "miles_drive": 118.0,
+        "minutes_drive": 154,
+        "miles_straight": 88.4
       },
       {
         "id": "youth-trim-cane---youth-hunt-3",
@@ -1667,7 +1869,10 @@
         "competition_label": "Unknown (new or unmatched)",
         "competition_score": 2.5,
         "applications_2025": null,
-        "apps_per_permit_2025": null
+        "apps_per_permit_2025": null,
+        "miles_drive": 136.9,
+        "minutes_drive": 191,
+        "miles_straight": 110.4
       },
       {
         "id": "youth-black-prairie---youth-hunt-2",
@@ -1692,7 +1897,10 @@
         "competition_label": "Moderate",
         "competition_score": 3.0,
         "applications_2025": 95,
-        "apps_per_permit_2025": 6.33
+        "apps_per_permit_2025": 6.33,
+        "miles_drive": 173.3,
+        "minutes_drive": 214,
+        "miles_straight": 115.2
       },
       {
         "id": "youth-pascagoula-river-(lbtc-unit)---youth-hunt-6",
@@ -1717,7 +1925,10 @@
         "competition_label": "Unknown (new or unmatched)",
         "competition_score": 2.5,
         "applications_2025": null,
-        "apps_per_permit_2025": null
+        "apps_per_permit_2025": null,
+        "miles_drive": 203.8,
+        "minutes_drive": 263,
+        "miles_straight": 171.1
       }
     ],
     "senior": [
@@ -1744,7 +1955,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 209,
-        "apps_per_permit_2025": 4.18
+        "apps_per_permit_2025": 4.18,
+        "miles_drive": 47.0,
+        "minutes_drive": 89,
+        "miles_straight": 31.8
       },
       {
         "id": "senior-hell-creek---senior-hunt-1",
@@ -1769,7 +1983,10 @@
         "competition_label": "Low",
         "competition_score": 4.0,
         "applications_2025": 30,
-        "apps_per_permit_2025": 2.5
+        "apps_per_permit_2025": 2.5,
+        "miles_drive": 232.0,
+        "minutes_drive": 283,
+        "miles_straight": 170.4
       },
       {
         "id": "senior-pascagoula-river-(lbtc-unit)---senior-hunt-1",
@@ -1794,7 +2011,10 @@
         "competition_label": "Unknown (new or unmatched)",
         "competition_score": 2.5,
         "applications_2025": null,
-        "apps_per_permit_2025": null
+        "apps_per_permit_2025": null,
+        "miles_drive": 203.8,
+        "minutes_drive": 263,
+        "miles_straight": 171.1
       },
       {
         "id": "senior-cossar-state-park---senior-hunt-1",
@@ -1819,7 +2039,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 26,
-        "apps_per_permit_2025": 13.0
+        "apps_per_permit_2025": 13.0,
+        "miles_drive": 140.5,
+        "minutes_drive": 181,
+        "miles_straight": 114.4
       },
       {
         "id": "senior-pascagoula-river-(lbtc-unit)---senior-hunt-2",
@@ -1844,7 +2067,10 @@
         "competition_label": "Unknown (new or unmatched)",
         "competition_score": 2.5,
         "applications_2025": null,
-        "apps_per_permit_2025": null
+        "apps_per_permit_2025": null,
+        "miles_drive": 203.8,
+        "minutes_drive": 263,
+        "miles_straight": 171.1
       },
       {
         "id": "senior-cossar-state-park---senior-hunt-3",
@@ -1869,7 +2095,10 @@
         "competition_label": "Moderate",
         "competition_score": 3.0,
         "applications_2025": 20,
-        "apps_per_permit_2025": 10.0
+        "apps_per_permit_2025": 10.0,
+        "miles_drive": 140.5,
+        "minutes_drive": 181,
+        "miles_straight": 114.4
       },
       {
         "id": "senior-cossar-state-park---senior-hunt-2",
@@ -1894,7 +2123,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 33,
-        "apps_per_permit_2025": 16.5
+        "apps_per_permit_2025": 16.5,
+        "miles_drive": 140.5,
+        "minutes_drive": 181,
+        "miles_straight": 114.4
       },
       {
         "id": "senior-trim-cane---senior-hunt-1",
@@ -1919,7 +2151,10 @@
         "competition_label": "High",
         "competition_score": 2.0,
         "applications_2025": 53,
-        "apps_per_permit_2025": 13.25
+        "apps_per_permit_2025": 13.25,
+        "miles_drive": 136.9,
+        "minutes_drive": 191,
+        "miles_straight": 110.4
       }
     ]
   },
@@ -1947,7 +2182,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 120,
-      "apps_per_permit_2025": 2.4
+      "apps_per_permit_2025": 2.4,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-6",
@@ -1972,7 +2210,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 245,
-      "apps_per_permit_2025": 4.9
+      "apps_per_permit_2025": 4.9,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-3",
@@ -1997,7 +2238,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 113,
-      "apps_per_permit_2025": 2.26
+      "apps_per_permit_2025": 2.26,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-6",
@@ -2022,7 +2266,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-4",
@@ -2047,7 +2294,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 430,
-      "apps_per_permit_2025": 8.6
+      "apps_per_permit_2025": 8.6,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-5",
@@ -2072,7 +2322,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 259,
-      "apps_per_permit_2025": 5.18
+      "apps_per_permit_2025": 5.18,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-14",
@@ -2097,7 +2350,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 165,
-      "apps_per_permit_2025": 9.17
+      "apps_per_permit_2025": 9.17,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-13",
@@ -2122,7 +2378,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 89,
-      "apps_per_permit_2025": 4.94
+      "apps_per_permit_2025": 4.94,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-5",
@@ -2147,7 +2406,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-14",
@@ -2172,7 +2434,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 287,
-      "apps_per_permit_2025": 11.96
+      "apps_per_permit_2025": 11.96,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-12",
@@ -2197,7 +2462,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 158,
-      "apps_per_permit_2025": 8.78
+      "apps_per_permit_2025": 8.78,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-13",
@@ -2222,7 +2490,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 216,
-      "apps_per_permit_2025": 9.0
+      "apps_per_permit_2025": 9.0,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     }
   ],
   "sleeper_picks": [
@@ -2249,7 +2520,10 @@
       "competition_label": "Very Low",
       "competition_score": 5.0,
       "applications_2025": 88,
-      "apps_per_permit_2025": 1.76
+      "apps_per_permit_2025": 1.76,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-4",
@@ -2274,7 +2548,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 120,
-      "apps_per_permit_2025": 2.4
+      "apps_per_permit_2025": 2.4,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-6",
@@ -2299,7 +2576,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 245,
-      "apps_per_permit_2025": 4.9
+      "apps_per_permit_2025": 4.9,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     }
   ],
   "locations": [
@@ -2351,7 +2631,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 120,
-      "apps_per_permit_2025": 2.4
+      "apps_per_permit_2025": 2.4,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-2",
@@ -2376,7 +2659,10 @@
       "competition_label": "Very Low",
       "competition_score": 5.0,
       "applications_2025": 88,
-      "apps_per_permit_2025": 1.76
+      "apps_per_permit_2025": 1.76,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-6",
@@ -2401,7 +2687,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 245,
-      "apps_per_permit_2025": 4.9
+      "apps_per_permit_2025": 4.9,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-3",
@@ -2426,7 +2715,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 113,
-      "apps_per_permit_2025": 2.26
+      "apps_per_permit_2025": 2.26,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-1",
@@ -2451,7 +2743,10 @@
       "competition_label": "Very Low",
       "competition_score": 5.0,
       "applications_2025": 65,
-      "apps_per_permit_2025": 1.3
+      "apps_per_permit_2025": 1.3,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-7",
@@ -2476,7 +2771,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 178,
-      "apps_per_permit_2025": 3.56
+      "apps_per_permit_2025": 3.56,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "primitive_weapon-yockanookany---pw-hunt-5",
@@ -2501,7 +2799,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 111,
-      "apps_per_permit_2025": 2.22
+      "apps_per_permit_2025": 2.22,
+      "miles_drive": 89.5,
+      "minutes_drive": 129,
+      "miles_straight": 66.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-3",
@@ -2526,7 +2827,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 438,
-      "apps_per_permit_2025": 8.76
+      "apps_per_permit_2025": 8.76,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-6",
@@ -2551,7 +2855,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-4",
@@ -2576,7 +2883,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 430,
-      "apps_per_permit_2025": 8.6
+      "apps_per_permit_2025": 8.6,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-2",
@@ -2601,7 +2911,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 66,
-      "apps_per_permit_2025": 2.75
+      "apps_per_permit_2025": 2.75,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-2",
@@ -2626,7 +2939,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 88,
-      "apps_per_permit_2025": 4.89
+      "apps_per_permit_2025": 4.89,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-5",
@@ -2651,7 +2967,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 259,
-      "apps_per_permit_2025": 5.18
+      "apps_per_permit_2025": 5.18,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-14",
@@ -2676,7 +2995,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 165,
-      "apps_per_permit_2025": 9.17
+      "apps_per_permit_2025": 9.17,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-6",
@@ -2701,7 +3023,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 58,
-      "apps_per_permit_2025": 2.42
+      "apps_per_permit_2025": 2.42,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-7",
@@ -2726,7 +3051,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 62,
-      "apps_per_permit_2025": 2.58
+      "apps_per_permit_2025": 2.58,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-13",
@@ -2751,7 +3079,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 89,
-      "apps_per_permit_2025": 4.94
+      "apps_per_permit_2025": 4.94,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-6",
@@ -2776,7 +3107,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 62,
-      "apps_per_permit_2025": 3.44
+      "apps_per_permit_2025": 3.44,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-7",
@@ -2801,7 +3135,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 57,
-      "apps_per_permit_2025": 3.17
+      "apps_per_permit_2025": 3.17,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-twin-oaks---archery-hunt-3",
@@ -2826,7 +3163,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 61,
-      "apps_per_permit_2025": 4.07
+      "apps_per_permit_2025": 4.07,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "archery-twin-oaks---archery-hunt-4",
@@ -2851,7 +3191,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 75,
-      "apps_per_permit_2025": 5.0
+      "apps_per_permit_2025": 5.0,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "senior-mahannah/phil-bryant---senior-hunt-1",
@@ -2876,7 +3219,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 209,
-      "apps_per_permit_2025": 4.18
+      "apps_per_permit_2025": 4.18,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "youth-natchez-state-park---youth-hunt-3",
@@ -2901,7 +3247,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 50,
-      "apps_per_permit_2025": 5.0
+      "apps_per_permit_2025": 5.0,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-4",
@@ -2926,7 +3275,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "senior-hell-creek---senior-hunt-1",
@@ -2951,7 +3303,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 30,
-      "apps_per_permit_2025": 2.5
+      "apps_per_permit_2025": 2.5,
+      "miles_drive": 232.0,
+      "minutes_drive": 283,
+      "miles_straight": 170.4
     },
     {
       "id": "youth-black-prairie---youth-hunt-3",
@@ -2976,7 +3331,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 58,
-      "apps_per_permit_2025": 3.87
+      "apps_per_permit_2025": 3.87,
+      "miles_drive": 173.3,
+      "minutes_drive": 214,
+      "miles_straight": 115.2
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-3",
@@ -3001,7 +3359,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 71,
-      "apps_per_permit_2025": 2.96
+      "apps_per_permit_2025": 2.96,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-1",
@@ -3026,7 +3387,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 86,
-      "apps_per_permit_2025": 3.58
+      "apps_per_permit_2025": 3.58,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-5",
@@ -3051,7 +3415,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 54,
-      "apps_per_permit_2025": 2.25
+      "apps_per_permit_2025": 2.25,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-3",
@@ -3076,7 +3443,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 88,
-      "apps_per_permit_2025": 4.89
+      "apps_per_permit_2025": 4.89,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-10",
@@ -3101,7 +3471,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 68,
-      "apps_per_permit_2025": 3.78
+      "apps_per_permit_2025": 3.78,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-2",
@@ -3126,7 +3499,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 371,
-      "apps_per_permit_2025": 7.42
+      "apps_per_permit_2025": 7.42,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-15",
@@ -3151,7 +3527,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 196,
-      "apps_per_permit_2025": 8.17
+      "apps_per_permit_2025": 8.17,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-2",
@@ -3176,7 +3555,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 184,
-      "apps_per_permit_2025": 7.67
+      "apps_per_permit_2025": 7.67,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "youth-phil-bryant-(ten-point-unit)---youth-hunt-2",
@@ -3201,7 +3583,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 186,
-      "apps_per_permit_2025": 7.75
+      "apps_per_permit_2025": 7.75,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-5",
@@ -3226,7 +3611,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 60,
-      "apps_per_permit_2025": 3.33
+      "apps_per_permit_2025": 3.33,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-16",
@@ -3251,7 +3639,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 64,
-      "apps_per_permit_2025": 3.56
+      "apps_per_permit_2025": 3.56,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-8",
@@ -3276,7 +3667,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 74,
-      "apps_per_permit_2025": 3.08
+      "apps_per_permit_2025": 3.08,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-9",
@@ -3301,7 +3695,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 93,
-      "apps_per_permit_2025": 3.88
+      "apps_per_permit_2025": 3.88,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-5",
@@ -3326,7 +3723,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "senior-pascagoula-river-(lbtc-unit)---senior-hunt-1",
@@ -3351,7 +3751,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-11",
@@ -3376,7 +3779,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 117,
-      "apps_per_permit_2025": 6.5
+      "apps_per_permit_2025": 6.5,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-15",
@@ -3401,7 +3807,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 111,
-      "apps_per_permit_2025": 6.17
+      "apps_per_permit_2025": 6.17,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-8",
@@ -3426,7 +3835,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 56,
-      "apps_per_permit_2025": 3.11
+      "apps_per_permit_2025": 3.11,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-9",
@@ -3451,7 +3863,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 44,
-      "apps_per_permit_2025": 2.44
+      "apps_per_permit_2025": 2.44,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-4",
@@ -3476,7 +3891,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 66,
-      "apps_per_permit_2025": 2.75
+      "apps_per_permit_2025": 2.75,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-14",
@@ -3501,7 +3919,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 287,
-      "apps_per_permit_2025": 11.96
+      "apps_per_permit_2025": 11.96,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-12",
@@ -3526,7 +3947,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 158,
-      "apps_per_permit_2025": 8.78
+      "apps_per_permit_2025": 8.78,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-4",
@@ -3551,7 +3975,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 75,
-      "apps_per_permit_2025": 4.17
+      "apps_per_permit_2025": 4.17,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-sky-lake---archery-hunt-2",
@@ -3576,7 +4003,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 127,
-      "apps_per_permit_2025": 8.47
+      "apps_per_permit_2025": 8.47,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "primitive_weapon-tuscumbia---pw-hunt-2",
@@ -3601,7 +4031,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 67,
-      "apps_per_permit_2025": 8.38
+      "apps_per_permit_2025": 8.38,
+      "miles_drive": 260.2,
+      "minutes_drive": 328,
+      "miles_straight": 191.1
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-13",
@@ -3626,7 +4059,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 216,
-      "apps_per_permit_2025": 9.0
+      "apps_per_permit_2025": 9.0,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-6",
@@ -3651,7 +4087,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 189,
-      "apps_per_permit_2025": 7.88
+      "apps_per_permit_2025": 7.88,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "archery-twin-oaks---archery-hunt-5",
@@ -3676,7 +4115,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 66,
-      "apps_per_permit_2025": 4.4
+      "apps_per_permit_2025": 4.4,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "youth-phil-bryant-(ten-point-unit)---youth-hunt-1",
@@ -3701,7 +4143,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 160,
-      "apps_per_permit_2025": 6.67
+      "apps_per_permit_2025": 6.67,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "archery-mahannah---archery-hunt-3",
@@ -3726,7 +4171,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 181,
-      "apps_per_permit_2025": 9.05
+      "apps_per_permit_2025": 9.05,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "primitive_weapon-charles-ray-nix---pw-hunt-1",
@@ -3751,7 +4199,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 291,
-      "apps_per_permit_2025": 5.82
+      "apps_per_permit_2025": 5.82,
+      "miles_drive": 154.3,
+      "minutes_drive": 188,
+      "miles_straight": 127.8
     },
     {
       "id": "archery-twin-oaks---archery-hunt-6",
@@ -3776,7 +4227,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 71,
-      "apps_per_permit_2025": 4.73
+      "apps_per_permit_2025": 4.73,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "youth-natchez-state-park---youth-hunt-4",
@@ -3801,7 +4255,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 45,
-      "apps_per_permit_2025": 4.5
+      "apps_per_permit_2025": 4.5,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-3",
@@ -3826,7 +4283,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "senior-cossar-state-park---senior-hunt-1",
@@ -3851,7 +4311,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 26,
-      "apps_per_permit_2025": 13.0
+      "apps_per_permit_2025": 13.0,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-8",
@@ -3876,7 +4339,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 210,
-      "apps_per_permit_2025": 14.0
+      "apps_per_permit_2025": 14.0,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-2",
@@ -3901,7 +4367,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 89,
-      "apps_per_permit_2025": 5.93
+      "apps_per_permit_2025": 5.93,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-3",
@@ -3926,7 +4395,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 97,
-      "apps_per_permit_2025": 8.08
+      "apps_per_permit_2025": 8.08,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-4",
@@ -3951,7 +4423,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 99,
-      "apps_per_permit_2025": 8.25
+      "apps_per_permit_2025": 8.25,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "youth-trim-cane---youth-hunt-3",
@@ -3976,7 +4451,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 136.9,
+      "minutes_drive": 191,
+      "miles_straight": 110.4
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-7",
@@ -4001,7 +4479,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 114,
-      "apps_per_permit_2025": 7.6
+      "apps_per_permit_2025": 7.6,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-7",
@@ -4026,7 +4507,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 65,
-      "apps_per_permit_2025": 4.33
+      "apps_per_permit_2025": 4.33,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "youth-black-prairie---youth-hunt-2",
@@ -4051,7 +4535,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 95,
-      "apps_per_permit_2025": 6.33
+      "apps_per_permit_2025": 6.33,
+      "miles_drive": 173.3,
+      "minutes_drive": 214,
+      "miles_straight": 115.2
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-1",
@@ -4076,7 +4563,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 115,
-      "apps_per_permit_2025": 7.67
+      "apps_per_permit_2025": 7.67,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-10",
@@ -4101,7 +4591,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 208,
-      "apps_per_permit_2025": 8.67
+      "apps_per_permit_2025": 8.67,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-3",
@@ -4126,7 +4619,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 182,
-      "apps_per_permit_2025": 7.58
+      "apps_per_permit_2025": 7.58,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "senior-pascagoula-river-(lbtc-unit)---senior-hunt-2",
@@ -4151,7 +4647,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-2",
@@ -4176,7 +4675,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-1",
@@ -4201,7 +4703,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 216,
-      "apps_per_permit_2025": 9.0
+      "apps_per_permit_2025": 9.0,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-5",
@@ -4226,7 +4731,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 206,
-      "apps_per_permit_2025": 8.58
+      "apps_per_permit_2025": 8.58,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-15",
@@ -4251,7 +4759,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 80,
-      "apps_per_permit_2025": 5.33
+      "apps_per_permit_2025": 5.33,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "gun-hell-creek---gun-hunt-2",
@@ -4276,7 +4787,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 270,
-      "apps_per_permit_2025": 10.8
+      "apps_per_permit_2025": 10.8,
+      "miles_drive": 232.0,
+      "minutes_drive": 283,
+      "miles_straight": 170.4
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-1",
@@ -4301,7 +4815,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 124,
-      "apps_per_permit_2025": 8.27
+      "apps_per_permit_2025": 8.27,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-3",
@@ -4326,7 +4843,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 86,
-      "apps_per_permit_2025": 5.73
+      "apps_per_permit_2025": 5.73,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-11",
@@ -4351,7 +4871,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 353,
-      "apps_per_permit_2025": 14.71
+      "apps_per_permit_2025": 14.71,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "youth-pascagoula-river-(lbtc-unit)---youth-hunt-6",
@@ -4376,7 +4899,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-1",
@@ -4401,7 +4927,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 101,
-      "apps_per_permit_2025": 5.61
+      "apps_per_permit_2025": 5.61,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-phil-bryant-(goose-lake-unit)---archery-hunt-12",
@@ -4426,7 +4955,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 438,
-      "apps_per_permit_2025": 18.25
+      "apps_per_permit_2025": 18.25,
+      "miles_drive": 44.8,
+      "minutes_drive": 77,
+      "miles_straight": 28.3
     },
     {
       "id": "archery-natchez-state-park---archery-hunt-17",
@@ -4451,7 +4983,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 55,
-      "apps_per_permit_2025": 3.06
+      "apps_per_permit_2025": 3.06,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-4",
@@ -4476,7 +5011,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 191,
-      "apps_per_permit_2025": 7.96
+      "apps_per_permit_2025": 7.96,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "archery-sky-lake---archery-hunt-3",
@@ -4501,7 +5039,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 105,
-      "apps_per_permit_2025": 7.0
+      "apps_per_permit_2025": 7.0,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "primitive_weapon-tuscumbia---pw-hunt-3",
@@ -4526,7 +5067,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 65,
-      "apps_per_permit_2025": 8.12
+      "apps_per_permit_2025": 8.12,
+      "miles_drive": 260.2,
+      "minutes_drive": 328,
+      "miles_straight": 191.1
     },
     {
       "id": "youth-trim-cane---youth-hunt-2",
@@ -4551,7 +5095,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 56,
-      "apps_per_permit_2025": 9.33
+      "apps_per_permit_2025": 9.33,
+      "miles_drive": 136.9,
+      "minutes_drive": 191,
+      "miles_straight": 110.4
     },
     {
       "id": "senior-cossar-state-park---senior-hunt-3",
@@ -4576,7 +5123,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 20,
-      "apps_per_permit_2025": 10.0
+      "apps_per_permit_2025": 10.0,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "archery-sky-lake---archery-hunt-1",
@@ -4601,7 +5151,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 131,
-      "apps_per_permit_2025": 8.73
+      "apps_per_permit_2025": 8.73,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "archery-sky-lake---archery-hunt-5",
@@ -4626,7 +5179,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 144,
-      "apps_per_permit_2025": 9.6
+      "apps_per_permit_2025": 9.6,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-10",
@@ -4651,7 +5207,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 106,
-      "apps_per_permit_2025": 7.07
+      "apps_per_permit_2025": 7.07,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "primitive_weapon-tuscumbia---pw-hunt-1",
@@ -4676,7 +5235,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 75,
-      "apps_per_permit_2025": 9.38
+      "apps_per_permit_2025": 9.38,
+      "miles_drive": 260.2,
+      "minutes_drive": 328,
+      "miles_straight": 191.1
     },
     {
       "id": "youth-pascagoula-river-(lbtc-unit)---youth-hunt-7",
@@ -4701,7 +5263,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "youth-pascagoula-river-(lbtc-unit)---youth-hunt-2",
@@ -4726,7 +5291,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "youth-pascagoula-river-(lbtc-unit)---youth-hunt-3",
@@ -4751,7 +5319,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "senior-cossar-state-park---senior-hunt-2",
@@ -4776,7 +5347,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 33,
-      "apps_per_permit_2025": 16.5
+      "apps_per_permit_2025": 16.5,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-9",
@@ -4801,7 +5375,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 165,
-      "apps_per_permit_2025": 11.0
+      "apps_per_permit_2025": 11.0,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-7",
@@ -4826,7 +5403,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 249,
-      "apps_per_permit_2025": 10.38
+      "apps_per_permit_2025": 10.38,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "archery-twin-oaks---archery-hunt-2",
@@ -4851,7 +5431,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 97,
-      "apps_per_permit_2025": 6.47
+      "apps_per_permit_2025": 6.47,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-4",
@@ -4876,7 +5459,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 94,
-      "apps_per_permit_2025": 6.27
+      "apps_per_permit_2025": 6.27,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-9",
@@ -4901,7 +5487,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 138,
-      "apps_per_permit_2025": 9.2
+      "apps_per_permit_2025": 9.2,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "archery-mahannah---archery-hunt-4",
@@ -4926,7 +5515,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 221,
-      "apps_per_permit_2025": 11.05
+      "apps_per_permit_2025": 11.05,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-2",
@@ -4951,7 +5543,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 123,
-      "apps_per_permit_2025": 8.2
+      "apps_per_permit_2025": 8.2,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-3",
@@ -4976,7 +5571,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 108,
-      "apps_per_permit_2025": 7.2
+      "apps_per_permit_2025": 7.2,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "youth-howard-miller---youth-hunt-6",
@@ -5001,7 +5599,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 8,
-      "apps_per_permit_2025": 8.0
+      "apps_per_permit_2025": 8.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "archery-calling-panther---archery-hunt-15",
@@ -5026,7 +5627,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 79,
-      "apps_per_permit_2025": 19.75
+      "apps_per_permit_2025": 19.75,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-2",
@@ -5051,7 +5655,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 105,
-      "apps_per_permit_2025": 8.75
+      "apps_per_permit_2025": 8.75,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-5",
@@ -5076,7 +5683,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 107,
-      "apps_per_permit_2025": 8.92
+      "apps_per_permit_2025": 8.92,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-natchez-state-park---pw-hunt-4",
@@ -5101,7 +5711,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 430,
-      "apps_per_permit_2025": 35.83
+      "apps_per_permit_2025": 35.83,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-twin-oaks---archery-hunt-1",
@@ -5126,7 +5739,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 88,
-      "apps_per_permit_2025": 5.87
+      "apps_per_permit_2025": 5.87,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-5",
@@ -5151,7 +5767,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 85,
-      "apps_per_permit_2025": 5.67
+      "apps_per_permit_2025": 5.67,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-8",
@@ -5176,7 +5795,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 116,
-      "apps_per_permit_2025": 7.73
+      "apps_per_permit_2025": 7.73,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "youth-black-prairie---youth-hunt-1",
@@ -5201,7 +5823,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 99,
-      "apps_per_permit_2025": 6.6
+      "apps_per_permit_2025": 6.6,
+      "miles_drive": 173.3,
+      "minutes_drive": 214,
+      "miles_straight": 115.2
     },
     {
       "id": "archery-calling-panther---archery-hunt-8",
@@ -5226,7 +5851,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 38,
-      "apps_per_permit_2025": 9.5
+      "apps_per_permit_2025": 9.5,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-6",
@@ -5251,7 +5879,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 115,
-      "apps_per_permit_2025": 9.58
+      "apps_per_permit_2025": 9.58,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-tuscumbia---pw-hunt-4",
@@ -5276,7 +5907,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 73,
-      "apps_per_permit_2025": 9.12
+      "apps_per_permit_2025": 9.12,
+      "miles_drive": 260.2,
+      "minutes_drive": 328,
+      "miles_straight": 191.1
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-11",
@@ -5301,7 +5935,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 230,
-      "apps_per_permit_2025": 15.33
+      "apps_per_permit_2025": 15.33,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "archery-sky-lake---archery-hunt-4",
@@ -5326,7 +5963,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 119,
-      "apps_per_permit_2025": 7.93
+      "apps_per_permit_2025": 7.93,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "youth-natchez-state-park---youth-hunt-2",
@@ -5351,7 +5991,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 60,
-      "apps_per_permit_2025": 6.0
+      "apps_per_permit_2025": 6.0,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-twin-oaks---archery-hunt-7",
@@ -5376,7 +6019,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 84,
-      "apps_per_permit_2025": 5.6
+      "apps_per_permit_2025": 5.6,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "archery-twin-oaks---archery-hunt-9",
@@ -5401,7 +6047,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 137,
-      "apps_per_permit_2025": 9.13
+      "apps_per_permit_2025": 9.13,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "primitive_weapon-alligator---pw-hunt-1",
@@ -5426,7 +6075,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 59.8,
+      "minutes_drive": 90,
+      "miles_straight": 41.9
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-13",
@@ -5451,7 +6103,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 5,
-      "apps_per_permit_2025": 5.0
+      "apps_per_permit_2025": 5.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "archery-calling-panther---archery-hunt-14",
@@ -5476,7 +6131,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 102,
-      "apps_per_permit_2025": 25.5
+      "apps_per_permit_2025": 25.5,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-7",
@@ -5501,7 +6159,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 119,
-      "apps_per_permit_2025": 9.92
+      "apps_per_permit_2025": 9.92,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "youth-trim-cane---youth-hunt-6",
@@ -5526,7 +6187,10 @@
       "competition_label": "Low",
       "competition_score": 4.0,
       "applications_2025": 18,
-      "apps_per_permit_2025": 3.0
+      "apps_per_permit_2025": 3.0,
+      "miles_drive": 136.9,
+      "minutes_drive": 191,
+      "miles_straight": 110.4
     },
     {
       "id": "archery-twin-oaks---archery-hunt-8",
@@ -5551,7 +6215,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 101,
-      "apps_per_permit_2025": 6.73
+      "apps_per_permit_2025": 6.73,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-6",
@@ -5576,7 +6243,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 93,
-      "apps_per_permit_2025": 6.2
+      "apps_per_permit_2025": 6.2,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "gun-hell-creek---gun-hunt-3",
@@ -5601,7 +6271,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 305,
-      "apps_per_permit_2025": 12.2
+      "apps_per_permit_2025": 12.2,
+      "miles_drive": 232.0,
+      "minutes_drive": 283,
+      "miles_straight": 170.4
     },
     {
       "id": "gun-mahannah---gun-hunt-7",
@@ -5626,7 +6299,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 319,
-      "apps_per_permit_2025": 15.95
+      "apps_per_permit_2025": 15.95,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "youth-pascagoula-river-(lbtc-unit)---youth-hunt-1",
@@ -5651,7 +6327,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "archery-calling-panther---archery-hunt-6",
@@ -5676,7 +6355,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 59,
-      "apps_per_permit_2025": 14.75
+      "apps_per_permit_2025": 14.75,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-calling-panther---archery-hunt-7",
@@ -5701,7 +6383,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 46,
-      "apps_per_permit_2025": 11.5
+      "apps_per_permit_2025": 11.5,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-calling-panther---archery-hunt-13",
@@ -5726,7 +6411,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 59,
-      "apps_per_permit_2025": 14.75
+      "apps_per_permit_2025": 14.75,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "youth-natchez-state-park---youth-hunt-1",
@@ -5751,7 +6439,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 54,
-      "apps_per_permit_2025": 5.4
+      "apps_per_permit_2025": 5.4,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "youth-trim-cane---youth-hunt-4",
@@ -5776,7 +6467,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 42,
-      "apps_per_permit_2025": 7.0
+      "apps_per_permit_2025": 7.0,
+      "miles_drive": 136.9,
+      "minutes_drive": 191,
+      "miles_straight": 110.4
     },
     {
       "id": "gun-hell-creek---gun-hunt-1",
@@ -5801,7 +6495,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 316,
-      "apps_per_permit_2025": 12.64
+      "apps_per_permit_2025": 12.64,
+      "miles_drive": 232.0,
+      "minutes_drive": 283,
+      "miles_straight": 170.4
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-9",
@@ -5826,7 +6523,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 24,
-      "apps_per_permit_2025": 24.0
+      "apps_per_permit_2025": 24.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "gun-canemount---gun-hunt-6",
@@ -5851,7 +6551,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 838,
-      "apps_per_permit_2025": 69.83
+      "apps_per_permit_2025": 69.83,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-10",
@@ -5876,7 +6579,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 197,
-      "apps_per_permit_2025": 13.13
+      "apps_per_permit_2025": 13.13,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "youth-pascagoula-river-(lbtc-unit)---youth-hunt-4",
@@ -5901,7 +6607,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "youth-pascagoula-river-(lbtc-unit)---youth-hunt-5",
@@ -5926,7 +6635,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-7",
@@ -5951,7 +6663,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 189,
-      "apps_per_permit_2025": 15.75
+      "apps_per_permit_2025": 15.75,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-8",
@@ -5976,7 +6691,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 299,
-      "apps_per_permit_2025": 12.46
+      "apps_per_permit_2025": 12.46,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "archery-phil-bryant-(ten-point-unit)---archery-hunt-9",
@@ -6001,7 +6719,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 330,
-      "apps_per_permit_2025": 13.75
+      "apps_per_permit_2025": 13.75,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "youth-trim-cane---youth-hunt-1",
@@ -6026,7 +6747,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 63,
-      "apps_per_permit_2025": 10.5
+      "apps_per_permit_2025": 10.5,
+      "miles_drive": 136.9,
+      "minutes_drive": 191,
+      "miles_straight": 110.4
     },
     {
       "id": "archery-pascagoula-river-(lbtc-unit)---archery-hunt-1",
@@ -6051,7 +6775,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 132,
-      "apps_per_permit_2025": 11.0
+      "apps_per_permit_2025": 11.0,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-4",
@@ -6076,7 +6803,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 245,
-      "apps_per_permit_2025": 16.33
+      "apps_per_permit_2025": 16.33,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "senior-trim-cane---senior-hunt-1",
@@ -6101,7 +6831,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 53,
-      "apps_per_permit_2025": 13.25
+      "apps_per_permit_2025": 13.25,
+      "miles_drive": 136.9,
+      "minutes_drive": 191,
+      "miles_straight": 110.4
     },
     {
       "id": "archery-canemount---archery-hunt-2",
@@ -6126,7 +6859,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 352,
-      "apps_per_permit_2025": 29.33
+      "apps_per_permit_2025": 29.33,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "archery-mahannah---archery-hunt-2",
@@ -6151,7 +6887,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 260,
-      "apps_per_permit_2025": 13.0
+      "apps_per_permit_2025": 13.0,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "archery-mahannah---archery-hunt-5",
@@ -6176,7 +6915,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 207,
-      "apps_per_permit_2025": 10.35
+      "apps_per_permit_2025": 10.35,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "primitive_weapon-natchez-state-park---pw-hunt-5",
@@ -6201,7 +6943,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 366,
-      "apps_per_permit_2025": 30.5
+      "apps_per_permit_2025": 30.5,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-calling-panther---archery-hunt-3",
@@ -6226,7 +6971,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 79,
-      "apps_per_permit_2025": 19.75
+      "apps_per_permit_2025": 19.75,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-calling-panther---archery-hunt-10",
@@ -6251,7 +6999,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 74,
-      "apps_per_permit_2025": 18.5
+      "apps_per_permit_2025": 18.5,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "youth-howard-miller---youth-hunt-8",
@@ -6276,7 +7027,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 16,
-      "apps_per_permit_2025": 16.0
+      "apps_per_permit_2025": 16.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "primitive_weapon-natchez-state-park---pw-hunt-1",
@@ -6301,7 +7055,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 201,
-      "apps_per_permit_2025": 16.75
+      "apps_per_permit_2025": 16.75,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-mahannah---archery-hunt-1",
@@ -6326,7 +7083,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 284,
-      "apps_per_permit_2025": 14.2
+      "apps_per_permit_2025": 14.2,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "archery-mahannah---archery-hunt-6",
@@ -6351,7 +7111,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 222,
-      "apps_per_permit_2025": 11.1
+      "apps_per_permit_2025": 11.1,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-5",
@@ -6376,7 +7139,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 384,
-      "apps_per_permit_2025": 25.6
+      "apps_per_permit_2025": 25.6,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "youth-howard-miller---youth-hunt-10",
@@ -6401,7 +7167,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 21,
-      "apps_per_permit_2025": 21.0
+      "apps_per_permit_2025": 21.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "archery-calling-panther---archery-hunt-5",
@@ -6426,7 +7195,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 66,
-      "apps_per_permit_2025": 16.5
+      "apps_per_permit_2025": 16.5,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-calling-panther---archery-hunt-16",
@@ -6451,7 +7223,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 52,
-      "apps_per_permit_2025": 13.0
+      "apps_per_permit_2025": 13.0,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "gun-pascagoula-river-(lbtc-unit)---gun-hunt-2",
@@ -6476,7 +7251,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 150,
-      "apps_per_permit_2025": 25.0
+      "apps_per_permit_2025": 25.0,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-11",
@@ -6501,7 +7279,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 77,
-      "apps_per_permit_2025": 5.13
+      "apps_per_permit_2025": 5.13,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "primitive_weapon-mahannah---pw-hunt-2",
@@ -6526,7 +7307,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 536,
-      "apps_per_permit_2025": 26.8
+      "apps_per_permit_2025": 26.8,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "youth-howard-miller---youth-hunt-7",
@@ -6551,7 +7335,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 13,
-      "apps_per_permit_2025": 13.0
+      "apps_per_permit_2025": 13.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "archery-calling-panther---archery-hunt-2",
@@ -6576,7 +7363,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 103,
-      "apps_per_permit_2025": 25.75
+      "apps_per_permit_2025": 25.75,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-calling-panther---archery-hunt-11",
@@ -6601,7 +7391,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 89,
-      "apps_per_permit_2025": 22.25
+      "apps_per_permit_2025": 22.25,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-calling-panther---archery-hunt-17",
@@ -6626,7 +7419,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 34,
-      "apps_per_permit_2025": 8.5
+      "apps_per_permit_2025": 8.5,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-mahannah---archery-hunt-7",
@@ -6651,7 +7447,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 210,
-      "apps_per_permit_2025": 10.5
+      "apps_per_permit_2025": 10.5,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "archery-mahannah---archery-hunt-9",
@@ -6676,7 +7475,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 275,
-      "apps_per_permit_2025": 13.75
+      "apps_per_permit_2025": 13.75,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "archery-pascagoula-river-(lbtc-unit)---archery-hunt-2",
@@ -6701,7 +7503,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 126,
-      "apps_per_permit_2025": 10.5
+      "apps_per_permit_2025": 10.5,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "gun-phil-bryant-(ten-point-unit)---gun-hunt-2",
@@ -6726,7 +7531,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1461,
-      "apps_per_permit_2025": 60.88
+      "apps_per_permit_2025": 60.88,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "primitive_weapon-sky-lake---pw-hunt-6",
@@ -6751,7 +7559,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 459,
-      "apps_per_permit_2025": 30.6
+      "apps_per_permit_2025": 30.6,
+      "miles_drive": 52.9,
+      "minutes_drive": 84,
+      "miles_straight": 45.6
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---archery-hunt-2",
@@ -6776,7 +7587,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 235,
-      "apps_per_permit_2025": 58.75
+      "apps_per_permit_2025": 58.75,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-4",
@@ -6801,7 +7615,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 2540,
-      "apps_per_permit_2025": 635.0
+      "apps_per_permit_2025": 635.0,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-6",
@@ -6826,7 +7643,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 2157,
-      "apps_per_permit_2025": 539.25
+      "apps_per_permit_2025": 539.25,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "archery-calling-panther---archery-hunt-9",
@@ -6851,7 +7671,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 47,
-      "apps_per_permit_2025": 11.75
+      "apps_per_permit_2025": 11.75,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-2",
@@ -6876,7 +7699,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 17,
-      "apps_per_permit_2025": 17.0
+      "apps_per_permit_2025": 17.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "archery-calling-panther---archery-hunt-12",
@@ -6901,7 +7727,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 106,
-      "apps_per_permit_2025": 26.5
+      "apps_per_permit_2025": 26.5,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-1",
@@ -6926,7 +7755,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 138,
-      "apps_per_permit_2025": 11.5
+      "apps_per_permit_2025": 11.5,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "senior-cossar-state-park---senior-hunt-5",
@@ -6951,7 +7783,10 @@
       "competition_label": "Unknown (new or unmatched)",
       "competition_score": 2.5,
       "applications_2025": null,
-      "apps_per_permit_2025": null
+      "apps_per_permit_2025": null,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "gun-phil-bryant-(ten-point-unit)---gun-hunt-3",
@@ -6976,7 +7811,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1619,
-      "apps_per_permit_2025": 67.46
+      "apps_per_permit_2025": 67.46,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "archery-mahannah---archery-hunt-8",
@@ -7001,7 +7839,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 294,
-      "apps_per_permit_2025": 14.7
+      "apps_per_permit_2025": 14.7,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "gun-black-prairie---gun-hunt-1",
@@ -7026,7 +7867,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 550,
-      "apps_per_permit_2025": 36.67
+      "apps_per_permit_2025": 36.67,
+      "miles_drive": 173.3,
+      "minutes_drive": 214,
+      "miles_straight": 115.2
     },
     {
       "id": "gun-black-prairie---gun-hunt-2",
@@ -7051,7 +7895,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 508,
-      "apps_per_permit_2025": 33.87
+      "apps_per_permit_2025": 33.87,
+      "miles_drive": 173.3,
+      "minutes_drive": 214,
+      "miles_straight": 115.2
     },
     {
       "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-3",
@@ -7076,7 +7923,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 461,
-      "apps_per_permit_2025": 38.42
+      "apps_per_permit_2025": 38.42,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-phil-bryant-(buck-bayou-unit)---pw-hunt-2",
@@ -7101,7 +7951,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 376,
-      "apps_per_permit_2025": 31.33
+      "apps_per_permit_2025": 31.33,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-11",
@@ -7126,7 +7979,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 20,
-      "apps_per_permit_2025": 20.0
+      "apps_per_permit_2025": 20.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "archery-calling-panther---archery-hunt-4",
@@ -7151,7 +8007,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 69,
-      "apps_per_permit_2025": 17.25
+      "apps_per_permit_2025": 17.25,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "primitive_weapon-natchez-state-park---pw-hunt-3",
@@ -7176,7 +8035,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 248,
-      "apps_per_permit_2025": 20.67
+      "apps_per_permit_2025": 20.67,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-13",
@@ -7201,7 +8063,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 372,
-      "apps_per_permit_2025": 24.8
+      "apps_per_permit_2025": 24.8,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-9",
@@ -7226,7 +8091,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 134,
-      "apps_per_permit_2025": 11.17
+      "apps_per_permit_2025": 11.17,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-1",
@@ -7251,7 +8119,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 24,
-      "apps_per_permit_2025": 24.0
+      "apps_per_permit_2025": 24.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-10",
@@ -7276,7 +8147,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 25,
-      "apps_per_permit_2025": 25.0
+      "apps_per_permit_2025": 25.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "gun-canemount---gun-hunt-3",
@@ -7301,7 +8175,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 743,
-      "apps_per_permit_2025": 61.92
+      "apps_per_permit_2025": 61.92,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "gun-canemount---gun-hunt-7",
@@ -7326,7 +8203,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 592,
-      "apps_per_permit_2025": 49.33
+      "apps_per_permit_2025": 49.33,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-4",
@@ -7351,7 +8231,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 16,
-      "apps_per_permit_2025": 16.0
+      "apps_per_permit_2025": 16.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-14",
@@ -7376,7 +8259,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 366,
-      "apps_per_permit_2025": 24.4
+      "apps_per_permit_2025": 24.4,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-16",
@@ -7401,7 +8287,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 316,
-      "apps_per_permit_2025": 21.07
+      "apps_per_permit_2025": 21.07,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "group-cossar-state-park---limited-weapon-hunt-2",
@@ -7426,7 +8315,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 299,
-      "apps_per_permit_2025": 299.0
+      "apps_per_permit_2025": 299.0,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "archery-phil-bryant-(buck-bayou-unit)---archery-hunt-8",
@@ -7451,7 +8343,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 138,
-      "apps_per_permit_2025": 11.5
+      "apps_per_permit_2025": 11.5,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "youth-canemount---youth-hunt-1",
@@ -7476,7 +8371,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 144,
-      "apps_per_permit_2025": 24.0
+      "apps_per_permit_2025": 24.0,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "gun-mahannah---gun-hunt-2",
@@ -7501,7 +8399,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 751,
-      "apps_per_permit_2025": 37.55
+      "apps_per_permit_2025": 37.55,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "primitive_weapon-mahannah---pw-hunt-1",
@@ -7526,7 +8427,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 524,
-      "apps_per_permit_2025": 26.2
+      "apps_per_permit_2025": 26.2,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "primitive_weapon-mahannah---pw-hunt-3",
@@ -7551,7 +8455,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 544,
-      "apps_per_permit_2025": 27.2
+      "apps_per_permit_2025": 27.2,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "gun-canemount---gun-hunt-4",
@@ -7576,7 +8483,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 977,
-      "apps_per_permit_2025": 81.42
+      "apps_per_permit_2025": 81.42,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-5",
@@ -7601,7 +8511,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1519,
-      "apps_per_permit_2025": 379.75
+      "apps_per_permit_2025": 379.75,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "gun-mahannah---gun-hunt-3",
@@ -7626,7 +8539,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 933,
-      "apps_per_permit_2025": 46.65
+      "apps_per_permit_2025": 46.65,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "group-cossar-state-park---limited-weapon-hunt-3",
@@ -7651,7 +8567,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 297,
-      "apps_per_permit_2025": 297.0
+      "apps_per_permit_2025": 297.0,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-1",
@@ -7676,7 +8595,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1347,
-      "apps_per_permit_2025": 336.75
+      "apps_per_permit_2025": 336.75,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-2",
@@ -7701,7 +8623,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1797,
-      "apps_per_permit_2025": 449.25
+      "apps_per_permit_2025": 449.25,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "primitive_weapon-twin-oaks---pw-hunt-12",
@@ -7726,7 +8651,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 335,
-      "apps_per_permit_2025": 22.33
+      "apps_per_permit_2025": 22.33,
+      "miles_drive": 48.0,
+      "minutes_drive": 116,
+      "miles_straight": 28.9
     },
     {
       "id": "group-natchez-state-park---primitive-weapon-hunt-1",
@@ -7751,7 +8679,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 701,
-      "apps_per_permit_2025": 701.0
+      "apps_per_permit_2025": 701.0,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "youth-trim-cane---youth-hunt-5",
@@ -7776,7 +8707,10 @@
       "competition_label": "Moderate",
       "competition_score": 3.0,
       "applications_2025": 34,
-      "apps_per_permit_2025": 5.67
+      "apps_per_permit_2025": 5.67,
+      "miles_drive": 136.9,
+      "minutes_drive": 191,
+      "miles_straight": 110.4
     },
     {
       "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-2",
@@ -7801,7 +8735,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 389,
-      "apps_per_permit_2025": 32.42
+      "apps_per_permit_2025": 32.42,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-phil-bryant-(buck-bayou-unit)---pw-hunt-1",
@@ -7826,7 +8763,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 365,
-      "apps_per_permit_2025": 30.42
+      "apps_per_permit_2025": 30.42,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-phil-bryant-(buck-bayou-unit)---pw-hunt-3",
@@ -7851,7 +8791,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 438,
-      "apps_per_permit_2025": 36.5
+      "apps_per_permit_2025": 36.5,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "gun-mahannah---gun-hunt-5",
@@ -7876,7 +8819,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1196,
-      "apps_per_permit_2025": 59.8
+      "apps_per_permit_2025": 59.8,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "group-natchez-state-park---primitive-weapon-hunt-2",
@@ -7901,7 +8847,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 796,
-      "apps_per_permit_2025": 796.0
+      "apps_per_permit_2025": 796.0,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "youth-howard-miller---youth-hunt-2",
@@ -7926,7 +8875,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 33,
-      "apps_per_permit_2025": 33.0
+      "apps_per_permit_2025": 33.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "archery-canemount---archery-hunt-3",
@@ -7951,7 +8903,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 345,
-      "apps_per_permit_2025": 28.75
+      "apps_per_permit_2025": 28.75,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "primitive_weapon-natchez-state-park---pw-hunt-2",
@@ -7976,7 +8931,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 300,
-      "apps_per_permit_2025": 25.0
+      "apps_per_permit_2025": 25.0,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "archery-riverfront---archery-hunt-1",
@@ -8001,7 +8959,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 303,
-      "apps_per_permit_2025": 75.75
+      "apps_per_permit_2025": 75.75,
+      "miles_drive": 45.3,
+      "minutes_drive": 79,
+      "miles_straight": 35.7
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-5",
@@ -8026,7 +8987,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 23,
-      "apps_per_permit_2025": 23.0
+      "apps_per_permit_2025": 23.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-6",
@@ -8051,7 +9015,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 30,
-      "apps_per_permit_2025": 30.0
+      "apps_per_permit_2025": 30.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "gun-canemount---gun-hunt-5",
@@ -8076,7 +9043,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 537,
-      "apps_per_permit_2025": 44.75
+      "apps_per_permit_2025": 44.75,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "youth-howard-miller---youth-hunt-3",
@@ -8101,7 +9071,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 27,
-      "apps_per_permit_2025": 27.0
+      "apps_per_permit_2025": 27.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "youth-howard-miller---youth-hunt-9",
@@ -8126,7 +9099,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 23,
-      "apps_per_permit_2025": 23.0
+      "apps_per_permit_2025": 23.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "archery-canemount---archery-hunt-1",
@@ -8151,7 +9127,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 368,
-      "apps_per_permit_2025": 30.67
+      "apps_per_permit_2025": 30.67,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "archery-canemount---archery-hunt-5",
@@ -8176,7 +9155,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 429,
-      "apps_per_permit_2025": 35.75
+      "apps_per_permit_2025": 35.75,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "gun-canemount---gun-hunt-8",
@@ -8201,7 +9183,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 351,
-      "apps_per_permit_2025": 29.25
+      "apps_per_permit_2025": 29.25,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "gun-mahannah---gun-hunt-6",
@@ -8226,7 +9211,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1136,
-      "apps_per_permit_2025": 56.8
+      "apps_per_permit_2025": 56.8,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "gun-mahannah---gun-hunt-8",
@@ -8251,7 +9239,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1148,
-      "apps_per_permit_2025": 57.4
+      "apps_per_permit_2025": 57.4,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "primitive_weapon-natchez-state-park---pw-hunt-6",
@@ -8276,7 +9267,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 250,
-      "apps_per_permit_2025": 20.83
+      "apps_per_permit_2025": 20.83,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "group-cossar-state-park---limited-weapon-hunt-4",
@@ -8301,7 +9295,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 174,
-      "apps_per_permit_2025": 174.0
+      "apps_per_permit_2025": 174.0,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-5",
@@ -8326,7 +9323,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 691,
-      "apps_per_permit_2025": 57.58
+      "apps_per_permit_2025": 57.58,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-riverfront---pw-hunt-3",
@@ -8351,7 +9351,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 724,
-      "apps_per_permit_2025": 181.0
+      "apps_per_permit_2025": 181.0,
+      "miles_drive": 45.3,
+      "minutes_drive": 79,
+      "miles_straight": 35.7
     },
     {
       "id": "gun-black-prairie---gun-hunt-3",
@@ -8376,7 +9379,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 481,
-      "apps_per_permit_2025": 32.07
+      "apps_per_permit_2025": 32.07,
+      "miles_drive": 173.3,
+      "minutes_drive": 214,
+      "miles_straight": 115.2
     },
     {
       "id": "gun-black-prairie---gun-hunt-4",
@@ -8401,7 +9407,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 556,
-      "apps_per_permit_2025": 37.07
+      "apps_per_permit_2025": 37.07,
+      "miles_drive": 173.3,
+      "minutes_drive": 214,
+      "miles_straight": 115.2
     },
     {
       "id": "gun-mahannah---gun-hunt-1",
@@ -8426,7 +9435,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 652,
-      "apps_per_permit_2025": 32.6
+      "apps_per_permit_2025": 32.6,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "gun-pascagoula-river-(lbtc-unit)---gun-hunt-1",
@@ -8451,7 +9463,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 162,
-      "apps_per_permit_2025": 27.0
+      "apps_per_permit_2025": 27.0,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "primitive_weapon-mahannah---pw-hunt-4",
@@ -8476,7 +9491,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 580,
-      "apps_per_permit_2025": 29.0
+      "apps_per_permit_2025": 29.0,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "gun-canemount---gun-hunt-9",
@@ -8501,7 +9519,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 234,
-      "apps_per_permit_2025": 19.5
+      "apps_per_permit_2025": 19.5,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "primitive_weapon-natchez-state-park---pw-hunt-7",
@@ -8526,7 +9547,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 166,
-      "apps_per_permit_2025": 13.83
+      "apps_per_permit_2025": 13.83,
+      "miles_drive": 118.0,
+      "minutes_drive": 154,
+      "miles_straight": 88.4
     },
     {
       "id": "youth-howard-miller---youth-hunt-4",
@@ -8551,7 +9575,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 28,
-      "apps_per_permit_2025": 28.0
+      "apps_per_permit_2025": 28.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "youth-howard-miller---youth-hunt-5",
@@ -8576,7 +9603,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 26,
-      "apps_per_permit_2025": 26.0
+      "apps_per_permit_2025": 26.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "gun-canemount---gun-hunt-1",
@@ -8601,7 +9631,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 433,
-      "apps_per_permit_2025": 36.08
+      "apps_per_permit_2025": 36.08,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "gun-pascagoula-river-(lbtc-unit)---gun-hunt-3",
@@ -8626,7 +9659,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 212,
-      "apps_per_permit_2025": 35.33
+      "apps_per_permit_2025": 35.33,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     },
     {
       "id": "gun-phil-bryant-(ten-point-unit)---gun-hunt-1",
@@ -8651,7 +9687,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1046,
-      "apps_per_permit_2025": 43.58
+      "apps_per_permit_2025": 43.58,
+      "miles_drive": 43.9,
+      "minutes_drive": 73,
+      "miles_straight": 30.3
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---archery-hunt-3",
@@ -8676,7 +9715,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 249,
-      "apps_per_permit_2025": 62.25
+      "apps_per_permit_2025": 62.25,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-7",
@@ -8701,7 +9743,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 50,
-      "apps_per_permit_2025": 50.0
+      "apps_per_permit_2025": 50.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "gun-mahannah---gun-hunt-4",
@@ -8726,7 +9771,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1117,
-      "apps_per_permit_2025": 55.85
+      "apps_per_permit_2025": 55.85,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-6",
@@ -8751,7 +9799,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 668,
-      "apps_per_permit_2025": 55.67
+      "apps_per_permit_2025": 55.67,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-8",
@@ -8776,7 +9827,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 701,
-      "apps_per_permit_2025": 58.42
+      "apps_per_permit_2025": 58.42,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-mahannah---pw-hunt-5",
@@ -8801,7 +9855,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 649,
-      "apps_per_permit_2025": 32.45
+      "apps_per_permit_2025": 32.45,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "senior-cossar-state-park---senior-hunt-4",
@@ -8826,7 +9883,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 25,
-      "apps_per_permit_2025": 12.5
+      "apps_per_permit_2025": 12.5,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "archery-calling-panther---archery-hunt-1",
@@ -8851,7 +9911,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 106,
-      "apps_per_permit_2025": 26.5
+      "apps_per_permit_2025": 26.5,
+      "miles_drive": 86.8,
+      "minutes_drive": 102,
+      "miles_straight": 76.2
     },
     {
       "id": "primitive_weapon-riverfront---pw-hunt-4",
@@ -8876,7 +9939,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 510,
-      "apps_per_permit_2025": 127.5
+      "apps_per_permit_2025": 127.5,
+      "miles_drive": 45.3,
+      "minutes_drive": 79,
+      "miles_straight": 35.7
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---archery-hunt-5",
@@ -8901,7 +9967,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 313,
-      "apps_per_permit_2025": 78.25
+      "apps_per_permit_2025": 78.25,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-1",
@@ -8926,7 +9995,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 322,
-      "apps_per_permit_2025": 26.83
+      "apps_per_permit_2025": 26.83,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-8",
@@ -8951,7 +10023,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 53,
-      "apps_per_permit_2025": 53.0
+      "apps_per_permit_2025": 53.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "archery-canemount---archery-hunt-4",
@@ -8976,7 +10051,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 388,
-      "apps_per_permit_2025": 32.33
+      "apps_per_permit_2025": 32.33,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "youth-canemount---youth-hunt-2",
@@ -9001,7 +10079,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 153,
-      "apps_per_permit_2025": 25.5
+      "apps_per_permit_2025": 25.5,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "gun-phil-bryant-(buck-bayou-unit)---gun-hunt-4",
@@ -9026,7 +10107,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 597,
-      "apps_per_permit_2025": 49.75
+      "apps_per_permit_2025": 49.75,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-riverfront---pw-hunt-1",
@@ -9051,7 +10135,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 737,
-      "apps_per_permit_2025": 184.25
+      "apps_per_permit_2025": 184.25,
+      "miles_drive": 45.3,
+      "minutes_drive": 79,
+      "miles_straight": 35.7
     },
     {
       "id": "primitive_weapon-riverfront---pw-hunt-2",
@@ -9076,7 +10163,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 779,
-      "apps_per_permit_2025": 194.75
+      "apps_per_permit_2025": 194.75,
+      "miles_drive": 45.3,
+      "minutes_drive": 79,
+      "miles_straight": 35.7
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---gun-hunt-3",
@@ -9101,7 +10191,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 1952,
-      "apps_per_permit_2025": 488.0
+      "apps_per_permit_2025": 488.0,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "gun-canemount---gun-hunt-2",
@@ -9126,7 +10219,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 525,
-      "apps_per_permit_2025": 43.75
+      "apps_per_permit_2025": 43.75,
+      "miles_drive": 93.1,
+      "minutes_drive": 122,
+      "miles_straight": 64.7
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---archery-hunt-1",
@@ -9151,7 +10247,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 273,
-      "apps_per_permit_2025": 68.25
+      "apps_per_permit_2025": 68.25,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "primitive_weapon-mahannah---pw-hunt-6",
@@ -9176,7 +10275,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 695,
-      "apps_per_permit_2025": 34.75
+      "apps_per_permit_2025": 34.75,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "primitive_weapon-mahannah---pw-hunt-7",
@@ -9201,7 +10303,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 695,
-      "apps_per_permit_2025": 34.75
+      "apps_per_permit_2025": 34.75,
+      "miles_drive": 44.9,
+      "minutes_drive": 81,
+      "miles_straight": 30.9
     },
     {
       "id": "group-cossar-state-park---limited-weapon-hunt-1",
@@ -9226,7 +10331,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 304,
-      "apps_per_permit_2025": 304.0
+      "apps_per_permit_2025": 304.0,
+      "miles_drive": 140.5,
+      "minutes_drive": 181,
+      "miles_straight": 114.4
     },
     {
       "id": "group-phil-bryant-(backwoods-unit)---archery-hunt-4",
@@ -9251,7 +10359,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 259,
-      "apps_per_permit_2025": 64.75
+      "apps_per_permit_2025": 64.75,
+      "miles_drive": 47.0,
+      "minutes_drive": 89,
+      "miles_straight": 31.8
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-12",
@@ -9276,7 +10387,10 @@
       "competition_label": "High",
       "competition_score": 2.0,
       "applications_2025": 16,
-      "apps_per_permit_2025": 16.0
+      "apps_per_permit_2025": 16.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "youth-muscadine-farms---(washington-tract)-youth-hunt-3",
@@ -9301,7 +10415,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 22,
-      "apps_per_permit_2025": 22.0
+      "apps_per_permit_2025": 22.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114,
+      "miles_straight": 58.0
     },
     {
       "id": "gun-black-prairie---gun-(bucks-only)-hunt-1",
@@ -9326,7 +10443,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 616,
-      "apps_per_permit_2025": 41.07
+      "apps_per_permit_2025": 41.07,
+      "miles_drive": 173.3,
+      "minutes_drive": 214,
+      "miles_straight": 115.2
     },
     {
       "id": "archery-riverfront---archery-hunt-2",
@@ -9351,7 +10471,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 314,
-      "apps_per_permit_2025": 78.5
+      "apps_per_permit_2025": 78.5,
+      "miles_drive": 45.3,
+      "minutes_drive": 79,
+      "miles_straight": 35.7
     },
     {
       "id": "primitive_weapon-phil-bryant-(buck-bayou-unit)---pw-hunt-4",
@@ -9376,7 +10499,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 487,
-      "apps_per_permit_2025": 40.58
+      "apps_per_permit_2025": 40.58,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-phil-bryant-(buck-bayou-unit)---pw-hunt-5",
@@ -9401,7 +10527,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 539,
-      "apps_per_permit_2025": 44.92
+      "apps_per_permit_2025": 44.92,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "archery-riverfront---archery-hunt-3",
@@ -9426,7 +10555,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 328,
-      "apps_per_permit_2025": 82.0
+      "apps_per_permit_2025": 82.0,
+      "miles_drive": 45.3,
+      "minutes_drive": 79,
+      "miles_straight": 35.7
     },
     {
       "id": "archery-riverfront---archery-hunt-4",
@@ -9451,7 +10583,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 384,
-      "apps_per_permit_2025": 96.0
+      "apps_per_permit_2025": 96.0,
+      "miles_drive": 45.3,
+      "minutes_drive": 79,
+      "miles_straight": 35.7
     },
     {
       "id": "primitive_weapon-phil-bryant-(buck-bayou-unit)---pw-hunt-6",
@@ -9476,7 +10611,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 573,
-      "apps_per_permit_2025": 47.75
+      "apps_per_permit_2025": 47.75,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "primitive_weapon-phil-bryant-(buck-bayou-unit)---pw-hunt-7",
@@ -9501,7 +10639,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 543,
-      "apps_per_permit_2025": 45.25
+      "apps_per_permit_2025": 45.25,
+      "miles_drive": 47.4,
+      "minutes_drive": 91,
+      "miles_straight": 32.2
     },
     {
       "id": "youth-howard-miller---youth-hunt-1",
@@ -9526,7 +10667,10 @@
       "competition_label": "Extreme",
       "competition_score": 0.5,
       "applications_2025": 49,
-      "apps_per_permit_2025": 49.0
+      "apps_per_permit_2025": 49.0,
+      "miles_drive": 75.7,
+      "minutes_drive": 103,
+      "miles_straight": 52.6
     },
     {
       "id": "gun-pascagoula-river-(lbtc-unit)---gun-hunt-4",
@@ -9551,7 +10695,10 @@
       "competition_label": "Very High",
       "competition_score": 1.0,
       "applications_2025": 211,
-      "apps_per_permit_2025": 35.17
+      "apps_per_permit_2025": 35.17,
+      "miles_drive": 203.8,
+      "minutes_drive": 263,
+      "miles_straight": 171.1
     }
   ]
 }

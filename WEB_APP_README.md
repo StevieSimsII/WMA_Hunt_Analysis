@@ -1,8 +1,14 @@
-# Draw Desk — Mississippi WMA Deer Draw Decision App
+# Delta Draw Hunts — Mississippi WMA Deer Draw Decision App
 
 Interactive decision desk for the **2026–27** Mississippi WMA deer draw season.
 
 **Live (GitHub Pages):** https://steviesimsii.github.io/WMA_Hunt_Analysis/
+
+## Home base
+
+**Stabbin Cabin** — 1149 Watertower Rd, Bentonia, MS
+
+Browse filters include driving distance / radius from the cabin.
 
 ## What’s inside
 

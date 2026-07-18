@@ -1,0 +1,194 @@
+{
+  "home": {
+    "name": "Stabbin Cabin",
+    "address": "1149 Watertower Rd, Bentonia, MS",
+    "lat": 32.6505,
+    "lon": -90.3648
+  },
+  "locations": {
+    "Alligator": {
+      "lat": 33.1,
+      "lon": -90.85,
+      "label": "curated",
+      "miles_straight": 41.9,
+      "miles_drive": 59.8,
+      "minutes_drive": 90
+    },
+    "Black Prairie": {
+      "lat": 33.338525,
+      "lon": -88.5538177,
+      "label": "Black Prairie Wildlife Management Area, Lowndes County, Mississippi, United States",
+      "miles_straight": 115.2,
+      "miles_drive": 173.3,
+      "minutes_drive": 214
+    },
+    "Calling Panther": {
+      "lat": 31.55,
+      "lon": -90.45,
+      "label": "manual",
+      "miles_straight": 76.2,
+      "miles_drive": 86.8,
+      "minutes_drive": 102
+    },
+    "Canemount": {
+      "lat": 31.95,
+      "lon": -91.1,
+      "label": "manual",
+      "miles_straight": 64.7,
+      "miles_drive": 93.1,
+      "minutes_drive": 122
+    },
+    "Charles Ray Nix": {
+      "lat": 34.45,
+      "lon": -89.85,
+      "label": "manual",
+      "miles_straight": 127.8,
+      "miles_drive": 154.3,
+      "minutes_drive": 188
+    },
+    "Cossar State Park": {
+      "lat": 34.25,
+      "lon": -89.85,
+      "label": "manual",
+      "miles_straight": 114.4,
+      "miles_drive": 140.5,
+      "minutes_drive": 181
+    },
+    "Hell Creek": {
+      "lat": 34.6,
+      "lon": -88.55,
+      "label": "manual",
+      "miles_straight": 170.4,
+      "miles_drive": 232.0,
+      "minutes_drive": 283
+    },
+    "Howard Miller": {
+      "lat": 33.15,
+      "lon": -91.05,
+      "label": "manual",
+      "miles_straight": 52.6,
+      "miles_drive": 75.7,
+      "minutes_drive": 103
+    },
+    "Mahannah": {
+      "lat": 32.553,
+      "lon": -90.883,
+      "label": "curated",
+      "miles_straight": 30.9,
+      "miles_drive": 44.9,
+      "minutes_drive": 81
+    },
+    "Mahannah/Phil Bryant": {
+      "lat": 32.56,
+      "lon": -90.9,
+      "label": "curated",
+      "miles_straight": 31.8,
+      "miles_drive": 47.0,
+      "minutes_drive": 89
+    },
+    "Muscadine Farms": {
+      "lat": 33.3,
+      "lon": -91.0,
+      "label": "manual",
+      "miles_straight": 58.0,
+      "miles_drive": 80.6,
+      "minutes_drive": 114
+    },
+    "Natchez State Park": {
+      "lat": 31.5907828,
+      "lon": -91.2102898,
+      "label": "Natchez State Park, Adams County, Mississippi, United States",
+      "miles_straight": 88.4,
+      "miles_drive": 118.0,
+      "minutes_drive": 154
+    },
+    "Pascagoula River (LBTC Unit)": {
+      "lat": 30.65,
+      "lon": -88.65,
+      "label": "manual",
+      "miles_straight": 171.1,
+      "miles_drive": 203.8,
+      "minutes_drive": 263
+    },
+    "Phil Bryant (Backwoods Unit)": {
+      "lat": 32.56,
+      "lon": -90.9,
+      "label": "curated",
+      "miles_straight": 31.8,
+      "miles_drive": 47.0,
+      "minutes_drive": 89
+    },
+    "Phil Bryant (Buck Bayou Unit)": {
+      "lat": 32.57,
+      "lon": -90.91,
+      "label": "curated",
+      "miles_straight": 32.2,
+      "miles_drive": 47.4,
+      "minutes_drive": 91
+    },
+    "Phil Bryant (Goose Lake Unit)": {
+      "lat": 32.62,
+      "lon": -90.85,
+      "label": "curated",
+      "miles_straight": 28.3,
+      "miles_drive": 44.8,
+      "minutes_drive": 77
+    },
+    "Phil Bryant (Ten Point Unit)": {
+      "lat": 32.59,
+      "lon": -90.88,
+      "label": "curated",
+      "miles_straight": 30.3,
+      "miles_drive": 43.9,
+      "minutes_drive": 73
+    },
+    "Riverfront": {
+      "lat": 32.4,
+      "lon": -90.9,
+      "label": "curated",
+      "miles_straight": 35.7,
+      "miles_drive": 45.3,
+      "minutes_drive": 79
+    },
+    "Sky Lake": {
+      "lat": 33.3,
+      "lon": -90.5,
+      "label": "curated",
+      "miles_straight": 45.6,
+      "miles_drive": 52.9,
+      "minutes_drive": 84
+    },
+    "Trim Cane": {
+      "lat": 33.5,
+      "lon": -88.75,
+      "label": "manual",
+      "miles_straight": 110.4,
+      "miles_drive": 136.9,
+      "minutes_drive": 191
+    },
+    "Tuscumbia": {
+      "lat": 34.75,
+      "lon": -88.2,
+      "label": "manual",
+      "miles_straight": 191.1,
+      "miles_drive": 260.2,
+      "minutes_drive": 328
+    },
+    "Twin Oaks": {
+      "lat": 32.88,
+      "lon": -90.78,
+      "label": "curated",
+      "miles_straight": 28.9,
+      "miles_drive": 48.0,
+      "minutes_drive": 116
+    },
+    "Yockanookany": {
+      "lat": 33.1671336,
+      "lon": -89.3985637,
+      "label": "Yockanookany Wildlife Management Area, Attala County, Mississippi, United States",
+      "miles_straight": 66.4,
+      "miles_drive": 89.5,
+      "minutes_drive": 129
+    }
+  }
+}
