@@ -6,7 +6,7 @@ Interactive decision desk for the **2026–27** Mississippi WMA deer draw season
 
 ## Home base
 
-**Stabbin Cabin** — 1149 Watertower Rd, Bentonia, MS
+**The Camp** — 1149 Watertower Rd, Bentonia, MS
 
 Browse filters include driving distance / radius from the cabin.
 

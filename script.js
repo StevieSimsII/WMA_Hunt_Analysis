@@ -37,7 +37,7 @@ function driveText(hunt) {
 
 function whyLine(hunt, rank) {
   const drive =
-    hunt.miles_drive != null ? ` About ${hunt.miles_drive} miles from Stabbin Cabin.` : "";
+    hunt.miles_drive != null ? ` About ${hunt.miles_drive} miles from The Camp.` : "";
   if (rank === 0) return `Best overall mix of peak timing and workable odds.${drive}`;
   if (hunt.rut_period === "peak_rut") return `Inside the scarce Dec 29–Jan 4 peak rut window.${drive}`;
   if (hunt.rut_period === "pre_peak_rut") return `Pre-peak chasing window with solid hunt length.${drive}`;
@@ -172,7 +172,7 @@ function renderBrowse() {
   const shown = rows.slice(0, visibleCount);
   const label = maxDriveMiles >= 250 ? "statewide" : `within ${maxDriveMiles} mi`;
   document.getElementById("resultMeta").textContent =
-    `${rows.length} hunts ${label} of Stabbin Cabin · showing ${shown.length}`;
+    `${rows.length} hunts ${label} of The Camp · showing ${shown.length}`;
 
   document.getElementById("huntList").innerHTML = shown
     .map((hunt, index) => {

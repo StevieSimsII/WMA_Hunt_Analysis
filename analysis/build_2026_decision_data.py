@@ -481,7 +481,7 @@ def dates_overlap(a_start, a_end, b_start, b_end) -> bool:
 
 
 def build_strategy(scored: list[dict], n: int = 5, max_drive_miles: float = 120) -> list[dict]:
-    """Build a diversified 5-hunt slate near Stabbin Cabin when possible."""
+    """Build a diversified 5-hunt slate near The Camp when possible."""
     adult = [
         h
         for h in scored
@@ -722,7 +722,7 @@ def main() -> None:
     home = cabin_data.get(
         "home",
         {
-            "name": "Stabbin Cabin",
+            "name": "The Camp",
             "address": "1149 Watertower Rd, Bentonia, MS",
             "lat": 32.6505,
             "lon": -90.3648,
@@ -749,7 +749,7 @@ def main() -> None:
             ],
             "competition": "WMA Deer Draw Stats (2025)",
             "rut_region": "Yazoo County / Mississippi Delta peak rut Dec 29 – Jan 4",
-            "distances": "Driving miles/minutes from Stabbin Cabin via OSRM road network",
+            "distances": "Driving miles/minutes from The Camp via OSRM road network",
         },
         "totals": {
             "hunts": len(scored),
