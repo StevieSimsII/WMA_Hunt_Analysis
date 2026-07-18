@@ -280,9 +280,6 @@ async function init() {
   setupNav();
   try {
     DATA = await loadData();
-    const home = DATA.home_base?.address || "1149 Watertower Rd, Bentonia, MS";
-    document.getElementById("deadlineNote").textContent =
-      `Applications close August 15, 2026. ${DATA.totals.hunts} hunts scored from ${home}.`;
     document.getElementById("footStats").textContent =
       `${DATA.totals.hunts} hunts · ${DATA.nearby?.within_90 ?? "—"} within 90 mi`;
     renderStrategy(DATA);
