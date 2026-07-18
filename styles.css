@@ -117,9 +117,9 @@ select {
   position: absolute;
   inset: 0;
   background:
-    url("https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=80")
-      center / cover no-repeat;
-  transform: scale(1.06);
+    url("assets/hero-buck.jpg")
+      center 42% / cover no-repeat;
+  transform: scale(1.04);
   animation: hero-ken 18s ease-in-out infinite alternate;
 }
 
@@ -127,8 +127,8 @@ select {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(8, 18, 14, 0.78) 0%, rgba(8, 18, 14, 0.45) 48%, rgba(8, 18, 14, 0.28) 100%),
-    linear-gradient(0deg, rgba(8, 18, 14, 0.72) 0%, rgba(8, 18, 14, 0.18) 45%, rgba(8, 18, 14, 0.35) 100%);
+    linear-gradient(90deg, rgba(8, 18, 14, 0.82) 0%, rgba(8, 18, 14, 0.5) 42%, rgba(8, 18, 14, 0.22) 100%),
+    linear-gradient(0deg, rgba(8, 18, 14, 0.78) 0%, rgba(8, 18, 14, 0.2) 48%, rgba(8, 18, 14, 0.4) 100%);
 }
 
 .hero-inner {
@@ -142,8 +142,8 @@ select {
 .hero-brand {
   margin: 0 0 1.1rem;
   font-family: var(--display);
-  font-size: clamp(3rem, 9vw, 5.5rem);
-  line-height: 0.92;
+  font-size: clamp(2.4rem, 7.5vw, 4.6rem);
+  line-height: 0.95;
   letter-spacing: -0.03em;
 }
 
@@ -359,6 +359,76 @@ select {
   display: grid;
   gap: 1rem;
   margin-bottom: 1.25rem;
+}
+
+.drive-panel {
+  padding: 1.1rem 0 0.35rem;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.drive-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: end;
+  margin-bottom: 0.85rem;
+}
+
+.drive-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.drive-address {
+  margin: 0.2rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.drive-value {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--forest);
+  font-variant-numeric: tabular-nums;
+}
+
+.drive-slider input {
+  width: 100%;
+  accent-color: var(--forest);
+}
+
+.drive-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.preset {
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.preset.is-active,
+.preset:hover {
+  border-color: var(--forest);
+  color: var(--forest);
+}
+
+.preset.is-active {
+  background: rgba(22, 53, 40, 0.08);
 }
 
 .chip-row {

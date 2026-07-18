@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Draw Desk · Mississippi WMA Deer Draws 2026-27</title>
-  <meta name="description" content="Decision desk for Mississippi WMA deer draw hunts — 2026-27 season strategy, odds, and ranked opportunities." />
+  <title>Delta Draw Hunts · 2026-27 Mississippi WMA Deer Draws</title>
+  <meta name="description" content="Delta Draw Hunts — Mississippi WMA deer draw decisions from Stabbin Cabin in Bentonia." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,500;7..72,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,15 +12,13 @@
 </head>
 <body>
   <header class="topbar">
-    <a class="wordmark" href="#top">Draw Desk</a>
+    <a class="wordmark" href="#top">Delta Draw Hunts</a>
     <nav class="nav" id="nav" aria-label="Primary">
       <a href="#slate">Slate</a>
       <a href="#browse">Browse</a>
       <a href="#odds">Odds</a>
     </nav>
-    <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu">
-      Menu
-    </button>
+    <button class="menu-btn" type="button" aria-controls="nav" aria-expanded="false" aria-label="Menu">Menu</button>
   </header>
 
   <main id="top">
@@ -28,14 +26,14 @@
       <div class="hero-media" aria-hidden="true"></div>
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-inner">
-        <p class="hero-brand">Draw Desk</p>
-        <h1>Pick your five Mississippi WMA deer draws with clearer odds.</h1>
+        <p class="hero-brand">Delta Draw Hunts</p>
+        <h1>Five Mississippi WMA picks, ranked from Stabbin Cabin.</h1>
         <p class="hero-lede">
-          2026–27 schedules scored for rut timing, moon phase, and last year’s applicant pressure.
+          2026–27 draw schedules scored for rut, moon, competition, and drive time from Bentonia.
         </p>
         <div class="hero-cta">
           <a class="btn btn-light" href="#slate">Open the slate</a>
-          <a class="btn btn-line" href="#browse">Browse hunts</a>
+          <a class="btn btn-line" href="#browse">Filter by drive</a>
         </div>
       </div>
     </section>
@@ -45,7 +43,7 @@
         <p class="kicker">Five-choice slate</p>
         <h2>Apply these in order unless your calendar says otherwise.</h2>
         <p class="sub">
-          No overlapping dates. Different WMAs. Mix of peak timing and better historical odds.
+          Built around Stabbin Cabin at 1149 Watertower Rd, Bentonia, MS.
           <span id="deadlineNote">Applications close August 15, 2026.</span>
         </p>
       </div>
@@ -63,12 +61,34 @@
 
     <section id="browse" class="band">
       <div class="band-head">
-        <p class="kicker">Browse</p>
-        <h2>Find a hunt that fits your week.</h2>
-        <p class="sub">Filter by weapon and season window, then sort by score or odds.</p>
+        <p class="kicker">Browse from the cabin</p>
+        <h2>Keep only hunts within your drive.</h2>
+        <p class="sub">
+          Filter by driving distance from Stabbin Cabin, then refine by weapon and season window.
+        </p>
       </div>
 
       <div class="browse-tools">
+        <div class="drive-panel">
+          <div class="drive-head">
+            <div>
+              <p class="drive-label">Drive from Stabbin Cabin</p>
+              <p class="drive-address">1149 Watertower Rd, Bentonia, MS</p>
+            </div>
+            <p class="drive-value"><span id="driveValue">90</span> mi</p>
+          </div>
+          <label class="drive-slider">
+            <span class="sr-only">Maximum driving distance in miles</span>
+            <input id="filterDrive" type="range" min="30" max="250" step="10" value="90" />
+          </label>
+          <div class="drive-presets" role="group" aria-label="Drive distance presets">
+            <button type="button" class="preset" data-miles="45">45 mi</button>
+            <button type="button" class="preset is-active" data-miles="90">90 mi</button>
+            <button type="button" class="preset" data-miles="120">120 mi</button>
+            <button type="button" class="preset" data-miles="250">Statewide</button>
+          </div>
+        </div>
+
         <div class="chip-row" role="group" aria-label="Weapon category">
           <button type="button" class="chip is-active" data-category="all">All</button>
           <button type="button" class="chip" data-category="archery">Archery</button>
@@ -99,6 +119,7 @@
             <span class="sr-only">Sort</span>
             <select id="filterSort">
               <option value="decision">Best score</option>
+              <option value="drive">Closest drive</option>
               <option value="odds">Best odds</option>
               <option value="date">Soonest date</option>
               <option value="permits">Most permits</option>
@@ -123,11 +144,11 @@
       <div class="odds-split">
         <div>
           <h3>Easier draws</h3>
-          <ul class="pressure" id="sleeperList"></ul>
+          <ul class="pressure cool" id="sleeperList"></ul>
         </div>
         <div>
           <h3>Hardest draws</h3>
-          <ul class="pressure" id="hotList"></ul>
+          <ul class="pressure hot" id="hotList"></ul>
         </div>
       </div>
     </section>
@@ -138,10 +159,12 @@
         <h2>Seventy percent hunt quality. Thirty percent draw odds.</h2>
         <p class="sub">
           Quality weighs rut timing first, then moon phase, hunt length, and permit count.
-          Odds come from 2025 apps-per-permit. New hunts without history stay unmarked.
+          Drive distance from Stabbin Cabin is a filter, not part of the score — so you can
+          tighten the radius without changing the ranking model.
         </p>
         <p class="fine">
-          Built from MDWFP 2026 draw PDFs and 2025 WMA Deer Draw Stats. Independent — not affiliated with MDWFP.
+          Built from MDWFP 2026 draw PDFs and 2025 WMA Deer Draw Stats. Drive times estimated with OSRM.
+          Independent — not affiliated with MDWFP.
         </p>
         <a class="text-link" href="https://www.mdwfp.com/wildlife-hunting/wma-draw-hunts" target="_blank" rel="noopener">
           Apply on MDWFP →
@@ -151,7 +174,7 @@
   </main>
 
   <footer class="foot">
-    <span>Draw Desk · 2026–27</span>
+    <span>Delta Draw Hunts · Stabbin Cabin · 2026–27</span>
     <span id="footStats"></span>
   </footer>
 
