@@ -146,7 +146,8 @@
     const far = h.driveMinutes > state.radiusMin;
 
     return `
-      <article class="hunt" style="--type-color:${meta.color}" data-id="${h.id}" tabindex="0">
+      <article class="hunt" style="--type-color:${meta.color}" data-id="${h.id}"
+               tabindex="0" role="button" aria-label="${h.name} — open details">
         <button class="star${starred ? " is-on" : ""}" data-star="${h.id}"
                 aria-label="${starred ? "Remove from" : "Add to"} shortlist">${starred ? "★" : "☆"}</button>
         <div class="hunt-head">
@@ -459,11 +460,25 @@
            href="https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent("1149 Watertower Rd, Bentonia, MS 39040")}&destination=${wma.lat},${wma.lon}">Route it</a>
       </div>`;
 
+    const wasOpen = !$("#drawer").hidden;
     $("#drawer").hidden = false;
     $("#drawer-backdrop").hidden = false;
+    // Send focus into the panel so keyboard and screen-reader users land inside it,
+    // and remember where to put focus back when it closes.
+    if (!wasOpen) {
+      lastFocus = document.activeElement;
+      $("#drawer-close").focus();
+    }
   }
 
-  const closeDrawer = () => { $("#drawer").hidden = true; $("#drawer-backdrop").hidden = true; };
+  let lastFocus = null;
+  const closeDrawer = () => {
+    if ($("#drawer").hidden) return;
+    $("#drawer").hidden = true;
+    $("#drawer-backdrop").hidden = true;
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus();
+    lastFocus = null;
+  };
 
   /* ── Export ────────────────────────────────────────────────────────── */
   function download(filename, text, mime) {
@@ -540,8 +555,14 @@
 
   function setView(view) {
     state.view = view;
-    $$("#tabs .tab").forEach((t) => t.classList.toggle("is-active", t.dataset.view === view));
+    $$("#tabs .tab").forEach((t) => {
+      const on = t.dataset.view === view;
+      t.classList.toggle("is-active", on);
+      t.setAttribute("aria-current", on ? "page" : "false");
+    });
     $$(".view").forEach((v) => v.classList.toggle("is-active", v.dataset.view === view));
+    // The stat strip counts hunts in radius — it says nothing about the shortlist or areas views.
+    $("#stats").hidden = view !== "hunts" && view !== "calendar";
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -573,7 +594,7 @@
       `drop the current season's CSVs into data/ and re-run build_app_data.py to refresh.`;
 
     // Theme
-    const theme = read(STORE.theme, "dark");
+    const theme = read(STORE.theme, "light");
     document.documentElement.dataset.theme = theme;
     $("#theme-toggle").addEventListener("click", () => {
       const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
@@ -588,7 +609,7 @@
     radiusRange.value = state.radiusMin;
 
     const syncRadiusLabels = () => {
-      $("#radius-out").textContent = `${state.radiusMin} min`;
+      $("#radius-out").textContent = fmtDrive(state.radiusMin);
       $("#radius-label").textContent = fmtDrive(state.radiusMin);
     };
     syncRadiusLabels();
@@ -641,9 +662,11 @@
     });
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeDrawer();
-      if (e.key === "Enter") {
+      if (e.key === "Enter" || e.key === " ") {
+        // Don't let the star's own Enter/Space also open the drawer behind it.
+        if (e.target.closest?.("[data-star]")) return;
         const card = e.target.closest?.(".hunt");
-        if (card) openDrawer(card.dataset.id);
+        if (card) { e.preventDefault(); openDrawer(card.dataset.id); }
       }
     });
 
