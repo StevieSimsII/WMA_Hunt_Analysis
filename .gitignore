@@ -47,3 +47,12 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+.playwright-mcp/
+
+# Personal / private hunt data — never publish (repo is public).
+# A Group ID plus the leader's last name lets a stranger join our draw group.
+applications_local.py
+hunters.csv
+hunters.md
+assets/hunters.js
+*Panther_Permit*.pdf

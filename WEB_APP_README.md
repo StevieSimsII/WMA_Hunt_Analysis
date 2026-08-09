@@ -1,123 +1,118 @@
-# WMA Hunt Analysis Web App
+# South Delta Szn — WMA Draw Planner
 
-A modern, responsive web application for analyzing Mississippi Wildlife Management Area (WMA) draw hunt opportunities. Built with HTML5, CSS3, and JavaScript for optimal performance and user experience.
+A static single-page app for picking Mississippi WMA deer draw hunts. No build
+step, no dependencies, no server — open `index.html` or push to GitHub Pages.
 
-## 🌐 Live Demo
+```
+index.html            page shell
+assets/app.css        design system (dark default, light toggle)
+assets/app.js         filtering, scoring display, calendar, shortlist, exports
+assets/data.js        GENERATED — do not edit by hand
+assets/hunters.js     hunter roster (mirrors hunters.csv)
+parse_mdwfp_draws.py  MDWFP PDF tables -> data/*.csv
+build_app_data.py     data/*.csv -> assets/data.js
+data/raw/*.md         PDF tables as extracted, kept for re-parsing
+```
 
-**Access the web app:** [https://steviesimii.github.io/WMA_Hunt_Analysis/](https://steviesimii.github.io/WMA_Hunt_Analysis/)
+Currently loaded: **2026-27**, 232 hunts across 19 WMAs.
 
-## 📱 Features
+## Refreshing for a new season
 
-### Interactive Analysis Dashboard
-- **Optimal 5-Hunt Strategy** - Scientifically optimized recommendations
-- **Top 5 Rankings by Category** - Gun, Archery, Primitive Weapon, Group hunts
-- **Calendar Views** - Timeline, Monthly, and Moon Phase visualizations
-- **Responsive Design** - Works perfectly on desktop, tablet, and mobile
+1. On the [MDWFP WMA Draw Hunts page](https://www.mdwfp.com/wildlife-hunting/wma-draw-hunts),
+   grab the four deer PDFs (Archery, Gun, Primitive Weapon, Group). Extract each
+   one's `Hunt | Dates | Quota` table to markdown and save it as
+   `data/raw/<category>_<year>_<yy>.md` — e.g. `data/raw/archery_2027_28.md`.
+   Categories: `archery`, `gun`, `primitive_weapon`, `group`.
+2. Parse and build:
+   ```powershell
+   Push-Location "C:\Documents\GitHubCode\DeltaHuntingSeason"; python parse_mdwfp_draws.py 2027; python build_app_data.py; Pop-Location
+   ```
 
-### Modern UI/UX
-- **Clean, Professional Design** - Grey and white color scheme
-- **Smooth Animations** - Engaging user interactions
-- **Mobile-First Approach** - Optimized for all screen sizes
-- **Fast Loading** - Lightweight, optimized code
+That's it. The season label, rut windows, month filters, and calendar all derive
+from the dates in the data — nothing in the app is pinned to a year, and
+`build_app_data.py` always picks the newest season present in `data/`, so older
+CSVs can stay on disk for reference.
 
-### Data-Driven Insights
-- **131 Hunt Opportunities** analyzed across all weapon types
-- **Moon Phase Integration** - Optimal timing for deer movement
-- **Rut Period Analysis** - Peak breeding activity (Dec 29 - Jan 4)
-- **Strategic Diversification** - Risk management and success optimization
+**Check the parser's permit totals against the totals printed at the bottom of
+each MDWFP PDF.** They matched exactly for 2026-27 (1548 / 610 / 1577), which is
+the cheapest proof the tables came across intact.
 
-## 🎯 Quick Access
+If a CSV names a WMA that isn't in the `WMAS` table in `build_app_data.py`, the
+build stops and tells you which one. Add its entrance coordinates and re-run.
 
-### Optimal Strategy Summary
-1. **Phil Bryant Group Gun** (Nov 19-23) - Required group hunt ⭐⭐⭐
-2. **Phil Bryant Peak Rut Archery** (Jan 1-4) - Highest priority ⭐⭐⭐⭐⭐
-3. **Phil Bryant Optimal Archery** (Dec 18-21) - Best overall hunt ⭐⭐⭐⭐⭐
-4. **Mahannah Primitive Weapon** (Nov 20-21) - Diversification ⭐⭐⭐
-5. **Mahannah Gun Hunt** (Dec 21-22) - Strategic backup ⭐⭐⭐
+The app shows a red **"Past season data"** banner whenever the loaded season has
+already ended, so a stale build can't quietly pass for the current one.
 
-### Top Ranked Hunts by Category
-- **Gun Hunts:** Duck River WMA (Dec 30 - Jan 2) - 4.8/5.0
-- **Archery:** Oakley Training Center (Dec 1-31) - 4.9/5.0
-- **Primitive Weapon:** Duck River WMA (Dec 30 - Jan 2) - 4.8/5.0
-- **Group Hunts:** Duck River WMA (Dec 30 - Jan 2) - 4.8/5.0
+## The 1.5-hour camp filter
 
-## 🚀 Technology Stack
+Camp is **1149 Watertower Rd, Bentonia, MS**. Every WMA carries an estimated
+drive time from there; the toggle in the header hides anything past the
+threshold, and the slider moves it between 30 and 240 minutes. The setting
+persists in the browser.
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-- **Styling:** Custom CSS with CSS Grid and Flexbox
-- **Icons:** Font Awesome 6
-- **Fonts:** Inter (Google Fonts)
-- **Hosting:** GitHub Pages
-- **Version Control:** Git/GitHub
+Drive time is estimated, not routed: straight-line distance from camp × 1.45
+road factor at 47 mph, plus 10 minutes for gravel WMA access roads. All three
+constants live at the top of `build_app_data.py`. Each hunt's detail panel has a
+**Route it** link that opens the real drive in Google Maps — use that before you
+commit to anything.
 
-## 📊 Analysis Methodology
+The model is tuned for Delta county roads and **overestimates routes that run
+mostly on interstate**. To pin a real number, measure it in Maps and add
+`"drive_minutes": 65` to that WMA's entry in the `WMAS` table; the estimate is
+then ignored for that area.
 
-### Data Sources
-- Official MDWFP hunt schedules
-- Moon phase calculations
-- Regional rut timing research
-- Historical competition data
+At the default 90 minutes, 7 of 19 areas are in range — 127 of 232 hunts.
 
-### Scoring Algorithm
-Multi-factor analysis considering:
-- **Moon Phases** (New Moon = Optimal)
-- **Rut Timing** (Dec 29-Jan 4 = Peak)
-- **Hunt Duration** (Longer = Better)
-- **Permit Availability** (More = Better odds)
-- **Competition Levels** (Strategic assessment)
+| WMA | Drive | Miles | |
+|---|---|---|---|
+| Mahannah | 1h 02m | 41.0 | ✅ |
+| Phil Bryant (Ten Point Unit) | 1h 06m | 44.0 | ✅ |
+| Phil Bryant (Buck Bayou Unit) | 1h 07m | 44.5 | ✅ |
+| Twin Oaks | 1h 08m | 45.4 | ✅ |
+| Phil Bryant (Backwoods Unit) | 1h 09m | 46.4 | ✅ |
+| Phil Bryant (Goose Lake Unit) | 1h 11m | 47.9 | ✅ |
+| Sky Lake | 1h 26m | 59.8 | ✅ |
+| Calling Panther | 1h 34m | 65.8 | borderline — mostly I-55, likely closer |
+| Yockanookany | 2h 08m | 92.6 | |
+| Canemount | 2h 12m | 95.9 | |
+| Natchez State Park | 2h 49m | 125.1 | |
+| Riverfront | 2h 59m | 132.3 | |
+| Alligator | 3h 21m | 149.7 | |
+| Cossar State Park | 3h 28m | 155.4 | |
+| Black Prairie | 3h 35m | 160.6 | |
+| Charles Ray Nix | 4h 08m | 186.7 | |
+| Pascagoula River (LBTC Unit) | 5h 18m | 241.2 | |
+| Hell Creek | 5h 33m | 253.2 | |
+| Tuscumbia | 5h 54m | 269.7 | |
 
-### Optimization Strategy
-- **Diversification:** Multiple WMAs and hunt methods
-- **Risk Management:** No date conflicts, balanced competition
-- **Success Maximization:** Peak timing and optimal conditions
+## Scoring
 
-## 📱 Mobile Experience
+Each hunt gets a 0–10 score. Multi-day hunts are scored on their **best** day,
+not the opener.
 
-The web app is fully responsive and optimized for mobile devices:
-- **Touch-Friendly Interface** - Large buttons and easy navigation
-- **Swipe Gestures** - Intuitive calendar and tab navigation
-- **Fast Loading** - Optimized for mobile networks
-- **Offline Capability** - Core functionality works without internet
+| Factor | Weight | Basis |
+|---|---|---|
+| Rut | 40% | Delta-region timing — peak breeding Dec 26 – Jan 8, chase phase Dec 10 – Dec 25 |
+| Moon | 25% | New moon scores highest; smaller bump near the full moon |
+| Season | 15% | Cold-front probability by month (Dec > Jan > Nov > Oct) |
+| Permits | 10% | Draw-odds proxy — more permits offered, better odds |
+| Duration | 10% | Longer hunts give more chances |
 
-## 🔗 Additional Resources
+Rut windows and weights are in `RUT_WINDOW_TEMPLATE` and `WEIGHTS` in
+`build_app_data.py`. Change them there and re-run; the app reads the weights
+from the generated data and redraws the "How hunts are scored" panel to match.
 
-- **Source Code:** [GitHub Repository](https://github.com/StevieSimsII/WMA_Hunt_Analysis)
-- **Official MDWFP:** [WMA Draw Hunts](https://www.mdwfp.com/wildlife-hunting/wma-draw-hunts)
-- **Application Portal:** [Mississippi Outdoors](https://www.mississippioutdoors.com/)
+## Shortlist
 
-## 📅 Important Dates
+Mississippi allows **5 deer draw choices**. Star hunts to build a shortlist —
+it saves to the browser, warns past 5, and exports to `.ics` for your calendar.
+The Hunts tab also exports whatever is currently filtered to CSV.
 
-- **Application Opens:** July 15, 2025
-- **Application Deadline:** August 15, 2025 ⚠️
-- **Draw Results:** Within one week of deadline
-- **Peak Rut Period:** December 29, 2025 - January 4, 2026
-- **Optimal Moon Phase:** December 30, 2025 (New Moon)
+## Local preview
 
-## 📈 Success Metrics
+```powershell
+Push-Location "C:\Documents\GitHubCode\DeltaHuntingSeason"; python -m http.server 8899; Pop-Location
+```
 
-- **Average Strategy Score:** 3.52/5.0 (Excellent)
-- **WMA Diversity:** 3 different locations
-- **Hunt Method Coverage:** 4 different types
-- **Date Conflicts:** 0 (Perfect scheduling)
-- **Risk Level:** Optimally managed
-
-## 🎯 How to Use
-
-1. **Visit the Web App** - Click the live demo link above
-2. **Review Strategy** - Start with the Optimal 5-Hunt Strategy section
-3. **Explore Rankings** - Check top hunts by weapon category
-4. **View Calendar** - See timing and moon phase alignments
-5. **Apply for Hunts** - Use insights for your applications
-
-## 📞 Support
-
-For questions about the analysis or web app:
-- **GitHub Issues:** Report bugs or request features
-- **Documentation:** Comprehensive guides in the repository
-- **MDWFP Contact:** Official hunting regulations and applications
-
----
-
-**Built with 🎯 for Mississippi hunters by hunters**
-
-*This analysis is independent and not affiliated with the Mississippi Department of Wildlife, Fisheries & Parks*
+Then open http://127.0.0.1:8899. Opening `index.html` directly from disk works
+too — the data is a plain script, not a fetch.
